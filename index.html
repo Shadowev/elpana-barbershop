@@ -1,171 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Pana Barber Shop</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 60px;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.1rem;
-    }
-    img {
-      max-width: 200px;<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Pana Barber Shop</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 60px;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.1rem;
-    }
-    img {
-      max-width: 200px;
-      margin-bottom: 1em;
-    }
-    footer {
-      margin-top: 4em;
-      padding-top: 2em;
-      border-top: 1px solid #ccc;
-      font-size: 0.9rem;
-    }
-    footer a {
-      margin: 0 0.5em;
-      text-decoration: none;
-      color: #333;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-    }
-
-    /* Galería de imágenes */
-    #galeria {
-      padding: 40px 20px;
-      background: #fff;
-      text-align: center;
-    }
-    #galeria h2 {
-      margin-bottom: 16px;
-      font-size: 2rem;
-      color: #222;
-    }
-    #galeria .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-    #galeria img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Pana Barber Shop | Próximo lanzamiento</title>
+  <meta name="description" content="Próximamente: El Pana Barber Shop en Pueblo, Colorado. Reserva tu cita hoy mismo por WhatsApp." />
+  <link rel="shortcut icon" href="images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <img src="assets/logo.png" alt="Logo El Pana Barber Shop">
-  <h1>💈 Bienvenido a El Pana Barber Shop</h1>
-  <p>Estamos trabajando en nuestro sitio web. ¡Muy pronto estará listo!</p>
+  <header>
+    <img src="images/logo.png" alt="El Pana Barber Shop logo" class="logo" />
+    <h1>Bienvenido a El Pana Barber Shop</h1>
+    <p class="subtitulo">Donde el estilo cobra vida</p>
+    <section id="contador">
+      <h2>¡Faltan <span id="dias"></span> días para nuestro lanzamiento!</h2>
+    </section>
+  </header>
 
-  <!-- Galería de Imágenes -->
-  <section id="galeria">
-    <h2>Nuestro Espacio</h2>
-    <div class="grid">
-      <img src="assets/interior1.jpg" alt="Vista del interior 1">
-      <img src="assets/interior2.jpg" alt="Vista del interior 2">
-      <img src="assets/interior3.jpg" alt="Vista del interior 3">
-    </div>
-  </section>
-
-  <footer>
-    <div>
-      <a class="whatsapp-btn"
-         href="https://wa.me/17195042764?text=¡Hola%20El%20Pana%20Barber%20Shop!%20Quiero%20una%20cita."
-         target="_blank">
-        🟢 WhatsApp
-      </a>
-    </div>
-    <div style="margin-top:1em;">
-      Síguenos en:
-      <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a> •
-      <a href="https://facebook.com/tu_página" target="_blank">Facebook</a>
-    </div>
-    <div style="margin-top:0.5em;">
-      © 2025 El Pana Barber Shop
-    </div>
-  </footer>
-</body>
-</html>
-      margin-bottom: 1em;
-    }
-    footer {
-      margin-top: 4em;
-      padding-top: 2em;
-      border-top: 1px solid #ccc;
-      font-size: 0.9rem;
-    }
-    footer a {
-      margin: 0 0.5em;
-      text-decoration: none;
-      color: #333;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <img src="assets/logo.png" alt="Logo El Pana Barber Shop">
-  <h1>💈 Bienvenido a El Pana Barber Shop</h1>
-  <p>Estamos trabajando en nuestro sitio web. ¡Muy pronto estará listo!</p>
+  <main>
+    <section id="galeria">
+      <h2>Galería de Estilos</h2>
+      <div class="galeria-grid">
+        <img src="images/corte1.jpg" alt="Fade clásico" />
+        <img src="images/corte2.jpg" alt="Diseño personalizado" />
+        <img src="images/corte3.jpg" alt="Barba perfilada" />
+        <!-- Agrega o quita <img> según tus fotos -->
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div>
-      <a class="whatsapp-btn"
-         href="https://wa.me/17195042764?text=¡Hola%20El%20Pana%20Barber%20Shop!%20Quiero%20una%20cita."
-         target="_blank">
-        🟢 WhatsApp
+    <div class="contacto">
+      <a href="https://wa.me/TU_NUMERO" class="whatsapp-button" target="_blank">
+        <img src="images/whatsapp-icon.png" alt="Contáctanos por WhatsApp" />
       </a>
-    </div>
-    <div style="margin-top:1em;">
-      Síguenos en:
-      <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a> •
-      <a href="https://facebook.com/tu_página" target="_blank">Facebook</a>
-    </div>
-    <div style="margin-top:0.5em;">
-      © 2025 El Pana Barber Shop
+      <p>Síguenos en redes sociales</p>
+      <div class="redes">
+        <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a> |
+        <a href="https://facebook.com/tu_usuario" target="_blank">Facebook</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+``` [A](https://github.com/SCGDtecnologiasWeb/ritmicaLaMojonera/tree/b8a15606d808952b621e0ad6608b70fde3d15046/html%2Fel_club.php?copilot_analytics_metadata=eyJldmVudEluZm9fY2xpY2tTb3VyY2UiOiJjaXRhdGlvbkxpbmsiLCJldmVudEluZm9fY29udmVyc2F0aW9uSWQiOiJWVVA1NkhBc2ZXVTllTkRxeUVrVDUiLCJldmVudEluZm9fbWVzc2FnZUlkIjoiRUVEWDI5OTJ3QmJQb1hXM1lHNml2IiwiZXZlbnRJbmZvX2NsaWNrRGVzdGluYXRpb24iOiJodHRwczpcL1wvZ2l0aHViLmNvbVwvU0NHRHRlY25vbG9naWFzV2ViXC9yaXRtaWNhTGFNb2pvbmVyYVwvdHJlZVwvYjhhMTU2MDZkODA4OTUyYjYyMWUwYWQ2NjA4YjcwZmRlM2QxNTA0NlwvaHRtbCUyRmVsX2NsdWIucGhwIn0%3D&citationMarker=9F742443-6C92-4C44-BF58-8F5A7C53B6F1)
