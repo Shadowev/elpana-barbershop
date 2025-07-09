@@ -7,51 +7,90 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
-  padding: 1rem;
+  line-height: 1.6;
 }
 
-/* Contenedor general */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-/* Encabezado */
-header {
+.spinner {
+  border: 5px solid #ccc;
+  border-top: 5px solid #25D366;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
   text-align: center;
+  padding: 3rem 1rem;
+  background: #e0e0e0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-/* Galería */
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.galeria img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Botón de WhatsApp */
 .whatsapp-btn {
-  display: inline-block;
   background-color: #25D366;
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 2rem;
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
@@ -59,16 +98,112 @@ header {
   background-color: #1ebe5d;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .galeria img {
-    max-width: 90%;
-  }
-
-  .whatsapp-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
+/* Secciones */
+section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
+/* Cards de servicios */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Galería */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Formulario */
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-contacto button {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Ubicación */
+.ubicacion {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer a {
+  color: #25D366;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cards, .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .grid-item img {
+    width: 90%;
+  }
+}
