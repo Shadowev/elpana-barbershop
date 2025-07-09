@@ -1,105 +1,74 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* PRELOADER */
-#preloader {
-  position: fixed; top: 0; left: 0; width:100%; height:100%;
-  background:#fff; display:flex; align-items:center; justify-content:center; z-index:1000;
-}
-.spinner {
-  width:50px;height:50px;border:5px solid #ccc;border-top-color:#25D366;
-  border-radius:50%;animation:spin 1s infinite linear;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
-
-/* GENERAL */
-body { font-family:sans-serif; background:#f9f9f9; color:#333; scroll-behavior:smooth; }
-
-/* NAVBAR */
-.navbar {
-  position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;
-  align-items:center;padding:0.5em 1em;box-shadow:0 2px 4px rgba(0,0,0,0.1);z-index:500;
-}
-.logo { max-width:150px; }
-.menu { list-style:none; display:flex; gap:1em; }
-.menu a { text-decoration:none; color:#333; font-weight:bold; }
-
-/* HERO */
-.hero { text-align:center; padding:80px 20px; }
-.hero h1 { font-size:2.5rem; margin-bottom:0.5em; }
-.hero p { font-size:1.1rem; margin-bottom:1.5em; }
-
-/* BOTÓN WHATSAPP */
-.whatsapp-btn {
-  background:#25D366; color:#fff; padding:0.7em 1.4em; border-radius:4px;
-  text-decoration:none; font-weight:bold;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* SECCIÓN SERVICIOS */
-#servicios { background:#f2f2f2; padding:60px 20px; text-align:center; }
-.cards { display:grid; gap:20px; justify-items:center; }
-#servicios .cards { grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
-.card { background:#fff; padding:1.5em; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-.card h3 { margin-bottom:0.5em; }
-.card p { color:#25D366; font-weight:bold; }
-
-/* GALERÍA */
-#galeria { background:#fff; padding:60px 20px; text-align:center; }
-#galeria h2 { margin-bottom:1em; font-size:2rem; color:#222; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
-.grid img { width:100%; height:auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer; }
-
-/* TESTIMONIOS */
-#testimonios { background:#f9f9f9; padding:60px 20px; text-align:center; }
-.cards-testimonios { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
-.cards-testimonios .card p { font-style:italic; margin-bottom:0.5em; }
-.cards-testimonios .card span { font-weight:bold; color:#555; }
-
-/* CONTACTO */
-#contacto { padding:60px 20px; background:#fff; }
-.form-contacto {
-  max-width:500px; margin:0 auto 30px; display:flex; flex-direction:column; gap:12px;
-}
-.form-contacto input,
-.form-contacto textarea {
-  padding:0.8em; border:1px solid #ccc; border-radius:4px; font-size:1rem;
-}
-.form-contacto button {
-  background:#25D366; border:none; color:#fff; padding:0.8em; font-size:1rem;
-  border-radius:4px; cursor:pointer;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 1rem;
 }
 
-/* FOOTER */
-footer {
-  text-align:center; padding:20px; border-top:1px solid #ccc; color:#555;
-  font-size:0.9rem;
-}
-footer .redes a { margin:0 0.5em; color:#333; text-decoration:none; }
-
-/* GALERÍA: celdas proporcionales 4:3 usando padding-hack */
-#galeria .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
+/* Contenedor general */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-#galeria .grid-item {
-  position: relative;
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Galería */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.galeria img {
   width: 100%;
-  padding-top: 75%;       /* 3/4 = 75% para 4:3 */
-  overflow: hidden;
+  max-width: 300px;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-#galeria .grid-item img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* recorta y centra sin estirar */
-  object-position: center;
-  display: block;
+/* Botón de WhatsApp */
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .galeria img {
+    max-width: 90%;
+  }
+
+  .whatsapp-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 
