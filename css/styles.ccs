@@ -77,3 +77,17 @@ footer {
 footer .redes a { margin:0 0.5em; color:#333; text-decoration:none; }
 
 /* RESPONSIVE
+#galeria .grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* proporción 4:3 */
+  object-fit: cover;        /* recorta sin deformar */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+#galeria .grid img {
+  width: 100%;
+  height: 200px;            /* altura fija */
+  object-fit: cover;        /* recorta sin deformar */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
