@@ -3,13 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="EL Pana Barber Shop 1 en Pueblo, CO. Cortes, degradados y afeitados clásicos. Reserva por WhatsApp.">
-  <meta property="og:title" content="EL Pana Barber Shop 1">
-  <meta property="og:description" content="Cortes y estilo en Pueblo, CO. Reserva ya por WhatsApp.">
-  <meta property="og:image" content="https://elpanabarbershop1.com/assets/interior1.jpg">
-  <meta property="og:url" content="https://elpanabarbershop1.com">
-  <meta name="twitter:card" content="summary_large_image">
-
   <title>EL Pana Barber Shop 1</title>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="preload" href="css/styles.css" as="style">
@@ -26,7 +19,6 @@
     <ul class="menu">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#galeria">Galería</a></li>
-      <li><a href="#testimonios">Testimonios</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -35,10 +27,9 @@
     <h1>💈 EL Pana Barber Shop 1</h1>
     <p>Tu estilo, nuestro arte. Reserva tu cita ahora.</p>
     <a
-      href="https://wa.me/17195042764?text=%C2%A1Hola%20EL%20Pana%20Barber%20Shop%201!%20Quiero%20una%20cita."
       class="whatsapp-btn"
-      target="_blank"
-      rel="noopener noreferrer"
+      href="https://wa.me/17195042764?text=%C2%A1Hola%20EL%20Pana%20Barber%20Shop%201!%20Quiero%20una%20cita."
+      target="_blank" rel="noopener noreferrer"
     >
       🟢 Reservar por WhatsApp
     </a>
@@ -56,33 +47,44 @@
   <section id="galeria">
     <h2>Nuestro Espacio</h2>
     <div class="grid">
-      <a href="assets/interior1.jpg" class="glightbox"><img src="assets/interior1.jpg" alt="Interior 1"></a>
-      <a href="assets/interior2.jpg" class="glightbox"><img src="assets/interior2.jpg" alt="Interior 2"></a>
-      <a href="assets/interior3.jpg" class="glightbox"><img src="assets/interior3.jpg" alt="Interior 3"></a>
-    </div>
-  </section>
-
-  <section id="testimonios">
-    <h2>Testimonios</h2>
-    <div class="cards cards-testimonios">
-      <div class="card"><p>"Excelente servicio, mi corte nunca había quedado tan bien."</p><span>– Juan P.</span></div>
-      <div class="card"><p>"Ambiente acogedor y profesionales de primera."</p><span>– María G.</span></div>
-      <div class="card"><p>"Recomendado 100%. Volveré seguro."</p><span>– Carlos L.</span></div>
+      <div class="grid-item">
+        <a href="assets/interior1.jpg" class="glightbox">
+          <img src="assets/interior1.jpg" alt="Interior 1">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="assets/interior2.jpg" class="glightbox">
+          <img src="assets/interior2.jpg" alt="Interior 2">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="assets/interior3.jpg" class="glightbox">
+          <img src="assets/interior3.jpg" alt="Interior 3">
+        </a>
+      </div>
     </div>
   </section>
 
   <section id="contacto">
     <h2>Contáctanos</h2>
     <form action="#" method="POST" class="form-contacto">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu email" required>
+      <input type="text"  name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email"  placeholder="Tu email" required>
       <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=TU_EMBED_CODE"
-      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
+
+    <div class="ubicacion">
+      <h2>Ubicación</h2>
+      <p>1008 Constitution Rd, Pueblo, CO 81001</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=TU_EMBED_CODE"
+        width="100%" height="300"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
   </section>
 
   <footer>
@@ -94,7 +96,10 @@
     <div class="copyright">© 2025 EL Pana Barber Shop 1</div>
   </footer>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"
+  />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
   <script>
     window.addEventListener('load', () => {
@@ -104,23 +109,3 @@
   </script>
 </body>
 </html>
-<section id="galeria">
-  <h2>Nuestro Espacio</h2>
-  <div class="grid">
-    <div class="grid-item">
-      <a href="assets/interior1.jpg" class="glightbox">
-        <img src="assets/interior1.jpg" alt="Interior 1">
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="assets/interior2.jpg" class="glightbox">
-        <img src="assets/interior2.jpg" alt="Interior 2">
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="assets/interior3.jpg" class="glightbox">
-        <img src="assets/interior3.jpg" alt="Interior 3">
-      </a>
-    </div>
-  </div>
-</section>
