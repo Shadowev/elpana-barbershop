@@ -84,28 +84,27 @@ footer .redes a { margin:0 0.5em; color:#333; text-decoration:none; }
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-#galeria .grid img {
-  width: 100%;
-  height: 200px;            /* altura fija */
-  object-fit: cover;        /* recorta sin deformar */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* GALERÍA: celdas iguales y recorte perfecto */
+#galeria .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 150px;      /* fija la altura de cada fila */
+  gap: 12px;
 }
-/* GALERÍA CON CONTENEDORES PROPORCIONALES */
+
 #galeria .grid a {
-  display: block;            /* el enlace será el contenedor */
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;       /* proporción 4:3 */
-  overflow: hidden;          /* recorta lo que sobresalga */
+  height: 100%;
+  overflow: hidden;           /* recorta el exceso */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 0;          /* opcional, ajusta espacio si hace falta */
 }
 
 #galeria .grid a img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* mantiene proporción y recorta centro */
-  object-position: center;   /* centra la imagen dentro del recorte */
+  object-fit: cover;          /* mantiene proporción, recorta */
+  object-position: center;    /* centra el encuadre */
   display: block;
 }
