@@ -1,105 +1,79 @@
-/* RESET BÁSICO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* TIPOGRAFÍA Y FONDO */
-body {
-  font-family: sans-serif;
-  background: #f9f9f9;
-  color: #333;
-  text-align: center;
-  line-height: 1.4;
-  padding: 20px;
+/* PRELOADER */
+#preloader {
+  position: fixed; top: 0; left: 0; width:100%; height:100%;
+  background:#fff; display:flex; align-items:center; justify-content:center; z-index:1000;
 }
+.spinner {
+  width:50px;height:50px;border:5px solid #ccc;border-top-color:#25D366;
+  border-radius:50%;animation:spin 1s infinite linear;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
 
-/* LOGO */
-.logo {
-  max-width: 180px;
-  margin: 0 auto 1em;
-  display: block;
-}
+/* GENERAL */
+body { font-family:sans-serif; background:#f9f9f9; color:#333; scroll-behavior:smooth; }
 
-/* ENCABEZADO */
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5em;
+/* NAVBAR */
+.navbar {
+  position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;
+  align-items:center;padding:0.5em 1em;box-shadow:0 2px 4px rgba(0,0,0,0.1);z-index:500;
 }
+.logo { max-width:150px; }
+.menu { list-style:none; display:flex; gap:1em; }
+.menu a { text-decoration:none; color:#333; font-weight:bold; }
 
-header p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5em;
-}
+/* HERO */
+.hero { text-align:center; padding:80px 20px; }
+.hero h1 { font-size:2.5rem; margin-bottom:0.5em; }
+.hero p { font-size:1.1rem; margin-bottom:1.5em; }
 
 /* BOTÓN WHATSAPP */
 .whatsapp-btn {
-  display: inline-block;
-  background: #25D366;
-  color: #fff;
-  padding: 0.7em 1.2em;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 2em;
+  background:#25D366; color:#fff; padding:0.7em 1.4em; border-radius:4px;
+  text-decoration:none; font-weight:bold;
 }
+
+/* SECCIÓN SERVICIOS */
+#servicios { background:#f2f2f2; padding:60px 20px; text-align:center; }
+.cards { display:grid; gap:20px; justify-items:center; }
+#servicios .cards { grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
+.card { background:#fff; padding:1.5em; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.card h3 { margin-bottom:0.5em; }
+.card p { color:#25D366; font-weight:bold; }
 
 /* GALERÍA */
-#galeria {
-  background: #fff;
-  padding: 40px 20px;
-  margin-bottom: 2em;
-}
+#galeria { background:#fff; padding:60px 20px; text-align:center; }
+#galeria h2 { margin-bottom:1em; font-size:2rem; color:#222; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+.grid img { width:100%; height:auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); cursor:pointer; }
 
-#galeria h2 {
-  font-size: 2rem;
-  margin-bottom: 1em;
-  color: #222;
-}
+/* TESTIMONIOS */
+#testimonios { background:#f9f9f9; padding:60px 20px; text-align:center; }
+.cards-testimonios { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+.cards-testimonios .card p { font-style:italic; margin-bottom:0.5em; }
+.cards-testimonios .card span { font-weight:bold; color:#555; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
+/* CONTACTO */
+#contacto { padding:60px 20px; background:#fff; }
+.form-contacto {
+  max-width:500px; margin:0 auto 30px; display:flex; flex-direction:column; gap:12px;
 }
-
-.grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.form-contacto input,
+.form-contacto textarea {
+  padding:0.8em; border:1px solid #ccc; border-radius:4px; font-size:1rem;
+}
+.form-contacto button {
+  background:#25D366; border:none; color:#fff; padding:0.8em; font-size:1rem;
+  border-radius:4px; cursor:pointer;
 }
 
 /* FOOTER */
 footer {
-  font-size: 0.9rem;
-  color: #555;
-  padding-top: 2em;
-  border-top: 1px solid #ccc;
+  text-align:center; padding:20px; border-top:1px solid #ccc; color:#555;
+  font-size:0.9rem;
 }
+footer .redes a { margin:0 0.5em; color:#333; text-decoration:none; }
 
-footer .redes a {
-  margin: 0 0.5em;
-  color: #333;
-  text-decoration: none;
-}
-
-footer .copyright {
-  margin-top: 0.5em;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 1em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 100;
-}
-.menu {
-  list-style: none;
+/* RESPONSIVE
