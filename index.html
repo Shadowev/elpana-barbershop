@@ -1,41 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Menú de navegación -->
-<nav>
-  <ul class="nav" style="display:flex; gap:20px; justify-content:center; margin-bottom:30px; list-style:none;">
-    <li id="nav-home"><a href="#home" style="color:#ffcc00; text-decoration:none;">Inicio</a></li>
-    <li id="nav-services"><a href="#prices" style="color:#ffcc00; text-decoration:none;">Servicios</a></li>
-    <li id="nav-reviews"><a href="#reviews" style="color:#ffcc00; text-decoration:none;">Reseñas</a></li>
-    <li id="nav-contact"><a href="#contact" style="color:#ffcc00; text-decoration:none;">Contacto</a></li>
-  </ul>
-</nav>
-
-<!-- Sección de reseñas -->
-<section id="reviews" class="container">
-  <h2 id="reviews-title">Lo que dicen nuestros clientes</h2>
-  <p id="review-1">"¡Excelente atención y cortes impecables!" - Juan</p>
-  <p id="review-2">"El mejor barbero de Pueblo sin duda." - Carlos</p>
-</section>
-
-<!-- Formulario de contacto -->
-<section id="contact" class="container" style="margin-top:40px;">
-  <h2 id="contact-title">Contáctanos</h2>
-  <form onsubmit="event.preventDefault(); alert('Mensaje enviado 👍');" style="display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto;">
-    <label for="name" id="label-name">Nombre:</label>
-    <input type="text" id="name" required style="padding:10px; border-radius:5px; border:none;"/>
-
-    <label for="message" id="label-message">Mensaje:</label>
-    <textarea id="message" required rows="5" style="padding:10px; border-radius:5px; border:none;"></textarea>
-
-    <button type="submit" id="btn-send" style="padding:10px; background:#ffcc00; border:none; color:#111; font-weight:bold; border-radius:5px; cursor:pointer;">Enviar</button>
-  </form>
-</section>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Pana Barbershop 1</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --main-color: #ffcc00;
+      --bg-color: #111;
+      --text-color: #eee;
+      --accent-dark: #222;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -43,44 +20,129 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #eee;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
-      font-size: 16px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
     }
 
     header {
       text-align: center;
-      padding: 30px 10px;
+      padding: 100px 20px 30px;
     }
 
     .logo {
-      max-width: 200px;
-      width: 100%;
+      max-width: 180px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 2em;
-      color: #ffcc00;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #ffcc00;
-      margin-top: 30px;
-      margin-bottom: 10px;
+      font-size: 2.2em;
+      color: var(--main-color);
+      margin-bottom: 5px;
     }
 
     p {
+      margin-bottom: 15px;
+    }
+
+    nav {
+      background-color: var(--accent-dark);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav a {
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: white;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .language-switch {
+      position: fixed;
+      top: 14px;
+      left: 20px;
+      background: var(--bg-color);
+      color: var(--main-color);
+      border: 2px solid var(--main-color);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .language-switch:hover {
+      background: var(--main-color);
+      color: #111;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      color: var(--main-color);
+      margin-top: 40px;
       margin-bottom: 15px;
     }
 
@@ -90,52 +152,48 @@
     }
 
     ul li {
-      padding: 8px 0;
+      padding: 10px;
       border-bottom: 1px solid #333;
       display: flex;
       justify-content: space-between;
     }
 
-    .language-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #ffcc00;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-weight: bold;
+    .review-card {
+      background-color: #1a1a1a;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 4px solid var(--main-color);
       border-radius: 5px;
     }
 
-    .gallery {
+    form {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
+      max-width: 500px;
+      margin: 0 auto 40px;
     }
 
-    .gallery img {
-      max-width: 280px;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
+    input, textarea {
+      padding: 10px;
       border: none;
-      padding: 12px 16px;
-      border-radius: 50%;
-      font-size: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button[type="submit"] {
+      background-color: var(--main-color);
+      color: #111;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
       cursor: pointer;
-      z-index: 100;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: white;
     }
 
     footer {
@@ -143,26 +201,34 @@
       padding: 20px;
       font-size: 0.9em;
       color: #aaa;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
 <body>
-  <button class="language-switch" onclick="toggleLanguage()">English</button>
+  <button class="language-switch" onclick="toggleLanguage()">🌐 English</button>
+
+  <nav>
+    <ul class="nav">
+      <li><a href="#home" id="nav-home">Inicio</a></li>
+      <li><a href="#prices" id="nav-services">Servicios</a></li>
+      <li><a href="#reviews" id="nav-reviews">Reseñas</a></li>
+      <li><a href="#contact" id="nav-contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="assets/logo.png" alt="Logo El Pana Barbershop" class="logo" />
+    <h1 id="title">El Pana Barbershop 1</h1>
+    <p id="subtitle">Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.</p>
+  </header>
 
   <div class="container">
-    <header>
-      <img src="assets/logo.png" alt="Logo El Pana Barbershop" class="logo" />
-      <h1 id="title">El Pana Barbershop 1</h1>
-      <p id="subtitle">Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.</p>
-    </header>
+    <p id="intro">
+      Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al <strong>+1 719-504-2764</strong> para agendar tu cita.
+    </p>
 
-    <section>
-      <p id="intro">
-        Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al <strong>+1 719-504-2764</strong> para agendar tu cita.
-      </p>
-    </section>
-
-    <section>
+    <section id="prices">
       <h2 id="prices-title">Precios</h2>
       <ul id="price-list">
         <li><span>Corte de Cabello</span><span>$27</span></li>
@@ -175,23 +241,87 @@
 
     <div class="gallery">
       <img src="assets/interior1.jpg" alt="Interior de la barbería" />
-      <img src="assets/corte1.jpg" alt="Ejemplo de corte 1" />
-      <img src="assets/corte2.jpg" alt="Ejemplo de corte 2" />
-      <img src="assets/corte3.jpg" alt="Ejemplo de corte 3" />
+      <img src="assets/corte1.jpg" alt="Corte 1" />
+      <img src="assets/corte2.jpg" alt="Corte 2" />
+      <img src="assets/corte3.jpg" alt="Corte 3" />
     </div>
+
+    <section id="reviews">
+      <h2 id="reviews-title">Lo que dicen nuestros clientes</h2>
+      <div class="review-card" id="review-1">"¡Excelente atención y cortes impecables!" - Juan</div>
+      <div class="review-card" id="review-2">"El mejor barbero de Pueblo sin duda." - Carlos</div>
+    </section>
+
+    <section id="contact">
+      <h2 id="contact-title">Contáctanos</h2>
+      <form onsubmit="event.preventDefault(); alert('Mensaje enviado 👍');">
+        <label for="name" id="label-name">Nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="message" id="label-message">Mensaje:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit" id="btn-send">Enviar</button>
+      </form>
+    </section>
   </div>
 
-  <a class="whatsapp-button" href="https://wa.me/17195042764" target="_blank" title="Chatea con nosotros por WhatsApp">📱</a>
+  <a class="whatsapp-button" href="https://wa.me/17195042764" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" />
+    WhatsApp
+  </a>
 
   <footer>
     &copy; 2025 El Pana Barbershop 1. Todos los derechos reservados.
   </footer>
 
   <script>
-    let language = "es";
+    let language = localStorage.getItem("language") || "es";
 
-    function toggleLanguage() {
-      if (language === "es") {
+    const translations = {
+      es: {
+        "nav-home": "Inicio",
+        "nav-services": "Servicios",
+        "nav-reviews": "Reseñas",
+        "nav-contact": "Contacto",
+        "reviews-title": "Lo que dicen nuestros clientes",
+        "review-1": "¡Excelente atención y cortes impecables! - Juan",
+        "review-2": "El mejor barbero de Pueblo sin duda. - Carlos",
+        "contact-title": "Contáctanos",
+        "label-name": "Nombre:",
+        "label-message": "Mensaje:",
+        "btn-send": "Enviar",
+      },
+      en: {
+        "nav-home": "Home",
+        "nav-services": "Services",
+        "nav-reviews": "Reviews",
+        "nav-contact": "Contact",
+        "reviews-title": "What our clients say",
+        "review-1": "Excellent service and flawless cuts! - Juan",
+        "review-2": "Best barber in Pueblo, no doubt. - Carlos",
+        "contact-title": "Contact Us",
+        "label-name": "Name:",
+        "label-message": "Message:",
+        "btn-send": "Send",
+      }
+    };
+
+    function applyLanguage(lang) {
+      const langBtn = document.querySelector(".language-switch");
+      language = lang;
+      localStorage.setItem("language", language);
+
+      for (const id in translations[lang]) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.innerText = translations[lang][id];
+        }
+      }
+
+      langBtn.innerText = lang === "es" ? "🌐 English" : "🌐 Español";
+
+      if (lang === "en") {
         document.getElementById("title").innerText = "El Pana Barbershop 1";
         document.getElementById("subtitle").innerText = "Your style, our passion. Visit us in Pueblo, CO.";
         document.getElementById("intro").innerText =
@@ -204,8 +334,6 @@
           <li><span>Kids Haircut</span><span>$20</span></li>
           <li><span>Full Shave</span><span>$20</span></li>
         `;
-        document.querySelector(".language-switch").innerText = "Español";
-        language = "en";
       } else {
         document.getElementById("title").innerText = "El Pana Barbershop 1";
         document.getElementById("subtitle").innerText = "Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.";
@@ -219,10 +347,17 @@
           <li><span>Corte para Niño</span><span>$20</span></li>
           <li><span>Afeitado Completo</span><span>$20</span></li>
         `;
-        document.querySelector(".language-switch").innerText = "English";
-        language = "es";
       }
     }
+
+    function toggleLanguage() {
+      const newLang = language === "es" ? "en" : "es";
+      applyLanguage(newLang);
+    }
+
+    window.onload = () => {
+      applyLanguage(language);
+    };
   </script>
 </body>
 </html>
