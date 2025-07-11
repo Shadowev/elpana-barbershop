@@ -1,10 +1,4 @@
-:root {
-  --main-color: #ffcc00;
-  --bg-color: #111;
-  --text-color: #eee;
-  --accent-dark: #222;
-}
-
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -12,296 +6,238 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #eee;
   line-height: 1.6;
-  margin-top: 60px;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-/* Menú */
-nav {
-  background-color: var(--accent-dark);
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  color: var(--main-color);
+a {
+  color: inherit;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
 }
 
-.nav a:hover {
-  color: white;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
 }
 
-/* Encabezado */
-header {
+/* HERO HEADER */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('../assets/interior1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 40px 20px 20px;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
 }
 
 .logo {
-  max-width: 160px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  max-width: 180px;
+  margin-bottom: 15px;
 }
 
 h1 {
-  font-size: 2em;
-  color: var(--main-color);
-  margin-bottom: 5px;
+  font-size: 2.4em;
+  color: #ffcc00;
+  margin-bottom: 10px;
 }
 
-h2 {
-  color: var(--main-color);
-  font-size: 1.5em;
-  margin: 30px 0 15px;
+#tagline {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Idioma */
-.language-switch {
-  position: fixed;
-  bottom: 90px;
-  left: 20px;
-  background: var(--main-color);
-  color: #111;
+#language-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffcc00;
+  color: #000;
   border: none;
-  padding: 12px;
-  font-size: 18px;
-  border-radius: 50%;
+  padding: 8px 14px;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-  transition: background 0.3s ease;
+  z-index: 2;
 }
 
-.language-switch:hover {
-  background: white;
+/* SECTIONS */
+section {
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/* WhatsApp */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-size: 16px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 100;
+section h2 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+/* ABOUT */
+.about p {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
   transition: transform 0.3s ease;
 }
 
-.whatsapp-button:hover {
+.gallery-grid img:hover {
   transform: scale(1.05);
 }
 
-/* Precios */
-ul {
+/* SERVICES */
+.price-list {
   list-style: none;
+  max-width: 600px;
+  margin: auto;
   padding: 0;
 }
 
-ul li {
-  padding: 10px 0;
-  border-bottom: 1px solid #333;
+.price-list li {
   display: flex;
   justify-content: space-between;
-  font-size: 16px;
-}
-
-/* Galería */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  margin: 30px 0;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
-}
-
-/* Reseñas */
-.review-card {
-  background-color: #1a1a1a;
-  padding: 15px;
+  padding: 12px 20px;
+  background-color: #222;
   margin: 10px 0;
-  border-left: 4px solid var(--main-color);
   border-radius: 5px;
-  font-size: 15px;
-}
-
-/* Formulario */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
-  margin: 0 auto 40px;
-}
-
-input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-}
-
-button[type="submit"] {
-  background-color: var(--main-color);
-  color: #111;
-  font-weight: bold;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
   transition: background 0.3s;
 }
 
-button[type="submit"]:hover {
-  background-color: white;
+.price-list li:hover {
+  background-color: #333;
 }
 
-/* Horario */
-#schedule-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
-
-#schedule-list li {
+/* CONTACT */
+form {
   display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
-/* Mapa */
-.map-section {
-  margin-top: 30px;
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #eee;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .map-container {
+  margin-top: 30px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
-  margin-top: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
+  background-color: #000;
+  color: #bbb;
+  padding: 30px 20px;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #aaa;
-  border-top: 1px solid #333;
-  margin-top: 40px;
 }
 
-/* Responsivo extra */
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1.6em;
-  }
-
-  .nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    font-size: 14px;
-  }
-
-  .logo {
-    max-width: 130px;
-  }
-
-  .review-card {
-    font-size: 14px;
-  }
-
-  ul li {
-    font-size: 14px;
-  }
-
-  .whatsapp-button {
-    font-size: 14px;
-    padding: 10px 16px;
-  }
-
-  .language-switch {
-    bottom: 80px;
-    padding: 10px;
-    font-size: 16px;
-  }
+footer a {
+  color: #ffcc00;
 }
-.hero {
-  background: url("assets/interior1.jpg") center/cover no-repeat;
-  height: 85vh;
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+footer li {
+  margin: 4px 0;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
-  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  animation: pulse 2s infinite;
 }
 
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  width: 100%;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-.hero h1 {
-  font-size: 2.8em;
-  margin-bottom: 10px;
-  color: var(--main-color);
-}
-
-.hero p {
-  font-size: 1.2em;
-}
-
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2em;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
   }
 
-  .hero p {
-    font-size: 1em;
+  section h2 {
+    font-size: 1.6em;
+  }
+
+  .price-list li {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overlay {
+    padding: 30px 15px;
+  }
+
+  #language-btn {
+    padding: 6px 10px;
+    font-size: 0.9em;
   }
 }
