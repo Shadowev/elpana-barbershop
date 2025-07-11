@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Menú de navegación -->
+<nav>
+  <ul class="nav" style="display:flex; gap:20px; justify-content:center; margin-bottom:30px; list-style:none;">
+    <li id="nav-home"><a href="#home" style="color:#ffcc00; text-decoration:none;">Inicio</a></li>
+    <li id="nav-services"><a href="#prices" style="color:#ffcc00; text-decoration:none;">Servicios</a></li>
+    <li id="nav-reviews"><a href="#reviews" style="color:#ffcc00; text-decoration:none;">Reseñas</a></li>
+    <li id="nav-contact"><a href="#contact" style="color:#ffcc00; text-decoration:none;">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- Sección de reseñas -->
+<section id="reviews" class="container">
+  <h2 id="reviews-title">Lo que dicen nuestros clientes</h2>
+  <p id="review-1">"¡Excelente atención y cortes impecables!" - Juan</p>
+  <p id="review-2">"El mejor barbero de Pueblo sin duda." - Carlos</p>
+</section>
+
+<!-- Formulario de contacto -->
+<section id="contact" class="container" style="margin-top:40px;">
+  <h2 id="contact-title">Contáctanos</h2>
+  <form onsubmit="event.preventDefault(); alert('Mensaje enviado 👍');" style="display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto;">
+    <label for="name" id="label-name">Nombre:</label>
+    <input type="text" id="name" required style="padding:10px; border-radius:5px; border:none;"/>
+
+    <label for="message" id="label-message">Mensaje:</label>
+    <textarea id="message" required rows="5" style="padding:10px; border-radius:5px; border:none;"></textarea>
+
+    <button type="submit" id="btn-send" style="padding:10px; background:#ffcc00; border:none; color:#111; font-weight:bold; border-radius:5px; cursor:pointer;">Enviar</button>
+  </form>
+</section>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Pana Barbershop 1</title>
