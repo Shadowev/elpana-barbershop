@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <div class="idiomas">
-  <a href="index.html">🇪🇸 Español</a> | <a href="index-en.html">🇺🇸 English</a>
-</div>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Pana Barbershop 1</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="assets/logo.png" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    button {
+      background-color: #ffcc00;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
-      <h1>El Pana Barbershop 1</h1>
-      <p class="slogan">Estilo, precisión y confianza. ¡Bienvenido a El Pana Barbershop 1!</p>
-    </header>
-
-    <section class="servicios">
-      <h2>Servicios</h2>
-      <ul>
-        <li>Corte de cabello - $27</li>
-        <li>Barba - $15</li>
-        <li>Corte y barba - $35</li>
-        <li>Diseños personalizados - $30+</li>
-      </ul>
-    </section>
-
-    <section class="galeria">
-      <h2>Galería</h2>
-      <p>Próximamente añadiremos fotos de nuestros mejores cortes. ¡Vuelve pronto!</p>
-    </section>
-
-    <section class="contacto">
-      <h2>Contáctanos</h2>
-      <p>📍 1008 Constitution Rd, Pueblo, CO 81001</p>
-      <p>📞 <a href="tel:+17195042764">+1 719-504-2764</a></p>
-
-      <h3>Horario de Atención</h3>
-      <ul>
-        <li>Lunes a Jueves: 1:00 p.m. – 9:00 p.m.</li>
-        <li>Viernes a Domingo: 10:00 a.m. – 9:00 p.m.</li>
-      </ul>
-
-      <h3>Ubicación</h3>
-      <iframe
-        src="https://www.google.com/maps?q=1008+Constitution+Rd,+Pueblo,+CO+81001&output=embed"
-        width="100%"
-        height="300"
-        loading="lazy"
-      ></iframe>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 El Pana Barbershop 1. Todos los derechos reservados.</p>
-    </footer>
+    <h1 data-i18n="titulo_principal">Bienvenido a El Pana Barbershop 1</h1>
+    <p data-i18n="descripcion">Tu lugar de confianza para cortes y estilo en Pueblo, Colorado.</p>
+    <p data-i18n="contacto">Contáctanos: +1 719-504-2764</p>
+    <p data-i18n="horarios">Horarios de Atención: Lunes a Sábado de 9am a 7pm</p>
+    <button id="btn-idioma">English</button>
   </div>
+
+  <script>
+    const translations = {
+      es: {
+        titulo_principal: "Bienvenido a El Pana Barbershop 1",
+        descripcion: "Tu lugar de confianza para cortes y estilo en Pueblo, Colorado.",
+        contacto: "Contáctanos: +1 719-504-2764",
+        horarios: "Horarios de Atención: Lunes a Sábado de 9am a 7pm"
+      },
+      en: {
+        titulo_principal: "Welcome to El Pana Barbershop 1",
+        descripcion: "Your trusted spot for cuts and style in Pueblo, Colorado.",
+        contacto: "Contact Us: +1 719-504-2764",
+        horarios: "Opening Hours: Monday to Saturday from 9am to 7pm"
+      }
+    };
+
+    function cambiarIdioma(idioma) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const clave = el.getAttribute("data-i18n");
+        el.textContent = translations[idioma][clave];
+      });
+    }
+
+    document.getElementById("btn-idioma").addEventListener("click", () => {
+      const idiomaActual = document.documentElement.lang;
+      const nuevoIdioma = idiomaActual === "es" ? "en" : "es";
+      document.documentElement.lang = nuevoIdioma;
+      cambiarIdioma(nuevoIdioma);
+      document.getElementById("btn-idioma").textContent = nuevoIdioma === "es" ? "English" : "Español";
+    });
+  </script>
 </body>
 </html>
-<section class="whatsapp">
-  <a href="https://wa.me/17195042764?text=Hola%20El%20Pana%2C%20quiero%20reservar%20un%20corte." target="_blank" class="whatsapp-btn">
-    💬 Reserva por WhatsApp
-  </a>
-</section>
