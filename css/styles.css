@@ -80,9 +80,9 @@ nav {
 }
 
 /* LANGUAGE SWITCH */
-.language-switch {
+..language-switch {
   position: fixed;
-  top: 14px;
+  bottom: 80px;
   left: 20px;
   background: var(--bg-color);
   color: var(--main-color);
