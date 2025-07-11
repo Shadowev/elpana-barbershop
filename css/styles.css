@@ -116,3 +116,14 @@ footer {
 .whatsapp-btn:hover {
   background-color: #1ebe5b;
 }
+.idiomas {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.idiomas a {
+  color: #ffcc00;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
