@@ -1,26 +1,39 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
   color: #eee;
   line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 header {
   text-align: center;
-  background: #222;
-  padding: 30px 20px;
+  padding: 30px 10px;
 }
 
 .logo {
-  max-width: 150px;
-  border-radius: 10px;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 h1 {
-  margin: 10px 0;
-  font-size: 2.5em;
+  font-size: 2em;
   color: #ffcc00;
+  margin-bottom: 10px;
 }
 
 .slogan {
@@ -29,27 +42,32 @@ h1 {
 }
 
 section {
-  padding: 40px 20px;
-  border-bottom: 1px solid #333;
+  margin-bottom: 40px;
 }
 
-h2 {
+h2, h3 {
   color: #ffcc00;
   margin-bottom: 10px;
 }
 
 ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
 ul li {
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
 
 a {
   color: #ffcc00;
   text-decoration: none;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
 }
 
 footer {
