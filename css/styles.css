@@ -96,6 +96,21 @@ nav {
   transition: all 0.3s ease;
 }
 
+.language-switch {
+  position: fixed;
+  bottom: 90px; /* espacio para que no se sobreponga al WhatsApp */
+  left: 20px;
+  background: var(--bg-color);
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
 .language-switch:hover {
   background: var(--main-color);
   color: #111;
