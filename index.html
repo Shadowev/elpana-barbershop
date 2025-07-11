@@ -3,171 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Pana Barbershop 1 - Barbería en Pueblo, CO. Citas por WhatsApp. Cortes modernos y clásicos.">
   <title>El Pana Barbershop 1</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-<!-- ScrollReveal.js -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!-- Lightbox2 (para galería) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <body>
-  <!-- Botón de idioma -->
-  <button class="language-switch" onclick="toggleLanguage()">🌐</button>
-
-  <!-- Menú de navegación -->
-  <nav>
-    <ul class="nav">
-      <li><a href="#home" id="nav-home">Inicio</a></li>
-      <li><a href="#prices" id="nav-services">Servicios</a></li>
-      <li><a href="#contact" id="nav-contact">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <!-- Encabezado -->
-   <header id="home">
-    <img src="assets/logo.png" alt="Logo El Pana Barbershop" class="logo" />
-    <h1 id="title">El Pana Barbershop 1</h1>
-    <p id="subtitle">Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.</p>
+  <header class="hero">
+    <div class="overlay">
+      <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
+      <h1 id="title">El Pana Barbershop 1</h1>
+      <p id="tagline">¡Tu estilo, nuestra pasión!</p>
+      <button id="language-btn">English</button>
+    </div>
   </header>
 
-  <main class="container">
-    <p id="intro">
-      Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al <strong>+1 719-504-2764</strong> para agendar tu cita.
-    </p>
+  <section class="about reveal">
+    <h2 id="about-title">¿Quiénes somos?</h2>
+    <p id="about-text">Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!</p>
+  </section>
 
-    <!-- Servicios -->
-    <section id="prices">
-      <h2 id="prices-title">Precios</h2>
-      <ul id="price-list">
-        <li><span>Corte de Cabello</span><span>$25</span></li>
-        <li><span>Corte y Barba</span><span>$35</span></li>
-        <li><span>Diseño de Barba</span><span>$15</span></li>
-        <li><span>Corte para Niño</span><span>$20</span></li>
-        <li><span>Afeitado Completo</span><span>$20</span></li>
-      </ul>
-    </section>
-
-    <!-- Galería -->
-    <div class="gallery">
-      <img src="assets/interior1.jpg" alt="Interior" />
-      <img src="assets/corte1.jpg" alt="Corte 1" />
-      <img src="assets/corte2.jpg" alt="Corte 2" />
-      <img src="assets/corte3.jpg" alt="Corte 3" />
+  <section class="gallery reveal">
+    <h2 id="gallery-title">Galería de cortes</h2>
+    <div class="gallery-grid">
+      <a href="assets/corte1.jpg" data-lightbox="gallery"><img loading="lazy" src="assets/corte1.jpg" alt="Corte 1" /></a>
+      <a href="assets/corte2.jpg" data-lightbox="gallery"><img loading="lazy" src="assets/corte2.jpg" alt="Corte 2" /></a>
+      <a href="assets/corte3.jpg" data-lightbox="gallery"><img loading="lazy" src="assets/corte3.jpg" alt="Corte 3" /></a>
     </div>
+  </section>
 
-    <!-- Horario -->
-    <section id="horarios">
-      <h2 id="schedule-title">Horario de Atención</h2>
-      <ul id="schedule-list">
-        <li><span id="day-mon">Lunes</span><span>1:00pm – 9:00pm</span></li>
-        <li><span id="day-tue">Martes</span><span>1:00pm – 9:00pm</span></li>
-        <li><span id="day-wed">Miércoles</span><span>1:00pm – 9:00pm</span></li>
-        <li><span id="day-thu">Jueves</span><span>1:00pm – 9:00pm</span></li>
-        <li><span id="day-fri">Viernes</span><span>9:00am – 9:00pm</span></li>
-        <li><span id="day-sat">Sábado</span><span>9:00am – 9:00pm</span></li>
-        <li><span id="day-sun">Domingo</span><span>11:00am – 7:00pm</span></li>
-      </ul>
-    </section>
+  <section class="services reveal">
+    <h2 id="services-title">Servicios y precios</h2>
+    <ul class="price-list">
+      <li><span id="cut">Corte de cabello</span><span>$25</span></li>
+      <li><span id="beard">Afeitado de barba</span><span>$15</span></li>
+      <li><span id="combo">Corte + barba</span><span>$35</span></li>
+    </ul>
+  </section>
 
-    <!-- Contacto -->
-    <section id="contact">
-      <h2 id="contact-title">Contáctanos</h2>
-      <form onsubmit="event.preventDefault(); alert('Mensaje enviado 👍');">
-        <label for="name" id="label-name">Nombre:</label>
-        <input type="text" id="name" required>
-        <label for="message" id="label-message">Mensaje:</label>
-        <textarea id="message" rows="4" required></textarea>
-        <button type="submit" id="btn-send">Enviar</button>
-      </form>
-    </section>
+  <section class="contact reveal">
+    <h2 id="contact-title">Contáctanos</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <textarea name="message" placeholder="Mensaje" required></textarea>
+      <button type="submit" id="send-btn">Enviar</button>
+    </form>
+    <div class="map-container">
+      <iframe loading="lazy"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.477172442383!2d-104.59486132405863!3d38.255003771847846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713a3e41b2b41ab%3A0xb13221fae40bfb68!2s1008%20Constitution%20Rd%2C%20Pueblo%2C%20CO%2081001%2C%20USA!5e0!3m2!1ses!2sus!4v1684527954166!5m2!1ses!2sus"
+        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
 
-    <!-- Mapa -->
-    <section class="map-section">
-      <h2>Cómo llegar</h2>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.4064528599246!2d-104.5898324!3d38.2798799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87134a3c40a69a3b%3A0x4f420d7ab270174b!2s1008%20Constitution%20Rd%2C%20Pueblo%2C%20CO%2081001%2C%20USA!5e0!3m2!1sen!2sus!4v1720717031494!5m2!1sen!2sus"
-          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-  </main>
-
-  <!-- WhatsApp -->
-  <a
-  class="whatsapp-button"
-  href="https://wa.me/17195042764?text=Hola,%20quiero%20agendar%20una%20cita%20con%20El%20Pana%20Barbershop%201"
-  target="_blank"
->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" />
-  Reservar Cita
-</a>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 El Pana Barbershop 1. Todos los derechos reservados.
+  <footer class="footer reveal">
+    <p>📍 1008 Constitution Rd, Pueblo, CO 81001</p>
+    <p>📞 <a href="tel:+17195042764">+1 (719) 504-2764</a></p>
+    <p id="hours-title">Horarios:</p>
+    <ul>
+      <li>Lunes a Jueves: 1:00pm - 9:00pm</li>
+      <li>Viernes y Sábado: 9:00am - 9:00pm</li>
+      <li>Domingo: 11:00am - 7:00pm</li>
+    </ul>
+    <p>© 2025 El Pana Barbershop 1</p>
   </footer>
 
-  <!-- Idiomas -->
+  <a href="https://wa.me/17195042764" class="whatsapp" target="_blank" title="Reservar por WhatsApp">📱</a>
+
   <script>
-    let language = localStorage.getItem("language") || "es";
-    const translations = {
-      es: {
-        "nav-home": "Inicio", "nav-services": "Servicios", "nav-contact": "Contacto",
-        "contact-title": "Contáctanos", "label-name": "Nombre:", "label-message": "Mensaje:", "btn-send": "Enviar",
-        "schedule-title": "Horario de Atención",
-        "day-mon": "Lunes", "day-tue": "Martes", "day-wed": "Miércoles", "day-thu": "Jueves",
-        "day-fri": "Viernes", "day-sat": "Sábado", "day-sun": "Domingo"
-      },
-      en: {
-        "nav-home": "Home", "nav-services": "Services", "nav-contact": "Contact",
-        "contact-title": "Contact Us", "label-name": "Name:", "label-message": "Message:", "btn-send": "Send",
-        "schedule-title": "Business Hours",
-        "day-mon": "Monday", "day-tue": "Tuesday", "day-wed": "Wednesday", "day-thu": "Thursday",
-        "day-fri": "Friday", "day-sat": "Saturday", "day-sun": "Sunday"
-      }
-    };
-    function applyLanguage(lang) {
-      language = lang;
-      localStorage.setItem("language", lang);
-      for (const id in translations[lang]) {
+    ScrollReveal().reveal('.reveal', { distance: '50px', duration: 1000, easing: 'ease-out', origin: 'bottom', reset: false });
+
+    document.getElementById("language-btn").addEventListener("click", () => {
+      const currentLang = document.documentElement.lang;
+      const isSpanish = currentLang === "es";
+      document.documentElement.lang = isSpanish ? "en" : "es";
+
+      const translations = {
+        "about-title": isSpanish ? "About Us" : "¿Quiénes somos?",
+        "about-text": isSpanish ? "We are a professional barbershop in Pueblo, CO. Modern and classic cuts. Book your appointment today!" : "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
+        "gallery-title": isSpanish ? "Gallery" : "Galería de cortes",
+        "services-title": isSpanish ? "Services & Prices" : "Servicios y precios",
+        "cut": isSpanish ? "Haircut" : "Corte de cabello",
+        "beard": isSpanish ? "Beard shave" : "Afeitado de barba",
+        "combo": isSpanish ? "Haircut + beard" : "Corte + barba",
+        "contact-title": isSpanish ? "Contact Us" : "Contáctanos",
+        "send-btn": isSpanish ? "Send" : "Enviar",
+        "hours-title": isSpanish ? "Hours:" : "Horarios:",
+        "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
+        "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
+        "language-btn": isSpanish ? "Español" : "English"
+      };
+
+      Object.keys(translations).forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.innerText = translations[lang][id];
-      }
-      if (lang === "en") {
-        document.getElementById("title").innerText = "El Pana Barbershop 1";
-        document.getElementById("subtitle").innerText = "Your style, our passion. Visit us in Pueblo, CO.";
-        document.getElementById("intro").innerText =
-          "Welcome to El Pana Barbershop 1, where every haircut is a work of art. We are located at 1008 Constitution Rd, Pueblo, CO 81001. Call +1 719-504-2764 to book your appointment.";
-        document.getElementById("prices-title").innerText = "Prices";
-        document.getElementById("price-list").innerHTML = `
-          <li><span>Haircut</span><span>$25</span></li>
-          <li><span>Haircut & Beard</span><span>$35</span></li>
-          <li><span>Beard Design</span><span>$15</span></li>
-          <li><span>Kids Haircut</span><span>$20</span></li>
-          <li><span>Full Shave</span><span>$20</span></li>`;
-      } else {
-        document.getElementById("title").innerText = "El Pana Barbershop 1";
-        document.getElementById("subtitle").innerText = "Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.";
-        document.getElementById("intro").innerText =
-          "Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al +1 719-504-2764 para agendar tu cita.";
-        document.getElementById("prices-title").innerText = "Precios";
-        document.getElementById("price-list").innerHTML = `
-          <li><span>Corte de Cabello</span><span>$25</span></li>
-          <li><span>Corte y Barba</span><span>$35</span></li>
-          <li><span>Diseño de Barba</span><span>$15</span></li>
-          <li><span>Corte para Niño</span><span>$20</span></li>
-          <li><span>Afeitado Completo</span><span>$20</span></li>`;
-      }
-    }
-    function toggleLanguage() {
-      const newLang = language === "es" ? "en" : "es";
-      applyLanguage(newLang);
-    }
-    window.onload = () => applyLanguage(language);
+        if (el) el.textContent = translations[id];
+      });
+
+      document.getElementById("language-btn").textContent = isSpanish ? "Español" : "English";
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Gracias por tu mensaje. Te contactaremos pronto.");
+      this.reset();
+    });
   </script>
 </body>
 </html>
