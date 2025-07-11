@@ -4,72 +4,195 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Pana Barbershop 1</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #111;
       color: #eee;
-      padding: 20px;
-      margin: 0;
+      line-height: 1.6;
+      font-size: 16px;
     }
+
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      padding: 20px;
+    }
+
+    header {
       text-align: center;
+      padding: 30px 10px;
     }
+
+    .logo {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     h1 {
+      font-size: 2em;
       color: #ffcc00;
+      margin-bottom: 10px;
     }
-    button {
-      background-color: #ffcc00;
-      color: #111;
+
+    h2 {
+      color: #ffcc00;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .language-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffcc00;
       border: none;
-      padding: 10px 20px;
+      padding: 8px 12px;
       cursor: pointer;
-      margin-top: 20px;
       font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+  <button class="language-switch" onclick="toggleLanguage()">English</button>
+
   <div class="container">
-    <h1 data-i18n="titulo_principal">Bienvenido a El Pana Barbershop 1</h1>
-    <p data-i18n="descripcion">Tu lugar de confianza para cortes y estilo en Pueblo, Colorado.</p>
-    <p data-i18n="contacto">Contáctanos: +1 719-504-2764</p>
-    <p data-i18n="horarios">Horarios de Atención: Lunes a Sábado de 9am a 7pm</p>
-    <button id="btn-idioma">English</button>
+    <header>
+      <img src="assets/logo.png" alt="Logo El Pana Barbershop" class="logo" />
+      <h1 id="title">El Pana Barbershop 1</h1>
+      <p id="subtitle">Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.</p>
+    </header>
+
+    <section>
+      <p id="intro">
+        Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al <strong>+1 719-504-2764</strong> para agendar tu cita.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="prices-title">Precios</h2>
+      <ul id="price-list">
+        <li><span>Corte de Cabello</span><span>$27</span></li>
+        <li><span>Corte y Barba</span><span>$35</span></li>
+        <li><span>Diseño de Barba</span><span>$15</span></li>
+        <li><span>Corte para Niño</span><span>$25</span></li>
+        <li><span>Afeitado Completo</span><span>$20</span></li>
+      </ul>
+    </section>
+
+    <div class="gallery">
+      <img src="assets/interior1.jpg" alt="Interior de la barbería" />
+      <img src="assets/corte1.jpg" alt="Ejemplo de corte 1" />
+      <img src="assets/corte2.jpg" alt="Ejemplo de corte 2" />
+      <img src="assets/corte3.jpg" alt="Ejemplo de corte 3" />
+    </div>
   </div>
 
+  <a class="whatsapp-button" href="https://wa.me/17195042764" target="_blank" title="Chatea con nosotros por WhatsApp">📱</a>
+
+  <footer>
+    &copy; 2025 El Pana Barbershop 1. Todos los derechos reservados.
+  </footer>
+
   <script>
-    const translations = {
-      es: {
-        titulo_principal: "Bienvenido a El Pana Barbershop 1",
-        descripcion: "Tu lugar de confianza para cortes y estilo en Pueblo, Colorado.",
-        contacto: "Contáctanos: +1 719-504-2764",
-        horarios: "Horarios de Atención: Lunes a Sábado de 9am a 7pm"
-      },
-      en: {
-        titulo_principal: "Welcome to El Pana Barbershop 1",
-        descripcion: "Your trusted spot for cuts and style in Pueblo, Colorado.",
-        contacto: "Contact Us: +1 719-504-2764",
-        horarios: "Opening Hours: Monday to Saturday from 9am to 7pm"
+    let language = "es";
+
+    function toggleLanguage() {
+      if (language === "es") {
+        document.getElementById("title").innerText = "El Pana Barbershop 1";
+        document.getElementById("subtitle").innerText = "Your style, our passion. Visit us in Pueblo, CO.";
+        document.getElementById("intro").innerText =
+          "Welcome to El Pana Barbershop 1, where every haircut is a work of art. We are located at 1008 Constitution Rd, Pueblo, CO 81001. Call +1 719-504-2764 to book your appointment.";
+        document.getElementById("prices-title").innerText = "Prices";
+        document.getElementById("price-list").innerHTML = `
+          <li><span>Haircut</span><span>$25</span></li>
+          <li><span>Haircut & Beard</span><span>$35</span></li>
+          <li><span>Beard Design</span><span>$15</span></li>
+          <li><span>Kids Haircut</span><span>$20</span></li>
+          <li><span>Full Shave</span><span>$20</span></li>
+        `;
+        document.querySelector(".language-switch").innerText = "Español";
+        language = "en";
+      } else {
+        document.getElementById("title").innerText = "El Pana Barbershop 1";
+        document.getElementById("subtitle").innerText = "Tu estilo, nuestra pasión. Visítanos en Pueblo, CO.";
+        document.getElementById("intro").innerText =
+          "Bienvenidos a El Pana Barbershop 1, donde cada corte es una obra de arte. Estamos ubicados en 1008 Constitution Rd, Pueblo, CO 81001. Llama al +1 719-504-2764 para agendar tu cita.";
+        document.getElementById("prices-title").innerText = "Precios";
+        document.getElementById("price-list").innerHTML = `
+          <li><span>Corte de Cabello</span><span>$25</span></li>
+          <li><span>Corte y Barba</span><span>$35</span></li>
+          <li><span>Diseño de Barba</span><span>$15</span></li>
+          <li><span>Corte para Niño</span><span>$20</span></li>
+          <li><span>Afeitado Completo</span><span>$20</span></li>
+        `;
+        document.querySelector(".language-switch").innerText = "English";
+        language = "es";
       }
-    };
-
-    function cambiarIdioma(idioma) {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const clave = el.getAttribute("data-i18n");
-        el.textContent = translations[idioma][clave];
-      });
     }
-
-    document.getElementById("btn-idioma").addEventListener("click", () => {
-      const idiomaActual = document.documentElement.lang;
-      const nuevoIdioma = idiomaActual === "es" ? "en" : "es";
-      document.documentElement.lang = nuevoIdioma;
-      cambiarIdioma(nuevoIdioma);
-      document.getElementById("btn-idioma").textContent = nuevoIdioma === "es" ? "English" : "Español";
-    });
   </script>
 </body>
 </html>
