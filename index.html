@@ -16,7 +16,6 @@
     <ul class="nav">
       <li><a href="#home" id="nav-home">Inicio</a></li>
       <li><a href="#prices" id="nav-services">Servicios</a></li>
-      <li><a href="#reviews" id="nav-reviews">Reseñas</a></li>
       <li><a href="#contact" id="nav-contact">Contacto</a></li>
     </ul>
   </nav>
@@ -52,13 +51,6 @@
       <img src="assets/corte2.jpg" alt="Corte 2" />
       <img src="assets/corte3.jpg" alt="Corte 3" />
     </div>
-
-    <!-- Reseñas -->
-    <section id="reviews">
-      <h2 id="reviews-title">Lo que dicen nuestros clientes</h2>
-      <div class="review-card" id="review-1">"¡Excelente atención y cortes impecables!" - Juan</div>
-      <div class="review-card" id="review-2">"El mejor barbero de Pueblo sin duda." - Carlos</div>
-    </section>
 
     <!-- Horario -->
     <section id="horarios">
@@ -114,19 +106,15 @@
     let language = localStorage.getItem("language") || "es";
     const translations = {
       es: {
-        "nav-home": "Inicio", "nav-services": "Servicios", "nav-reviews": "Reseñas", "nav-contact": "Contacto",
-        "reviews-title": "Lo que dicen nuestros clientes", "review-1": "¡Excelente atención y cortes impecables! - Juan",
-        "review-2": "El mejor barbero de Pueblo sin duda. - Carlos", "contact-title": "Contáctanos",
-        "label-name": "Nombre:", "label-message": "Mensaje:", "btn-send": "Enviar",
+        "nav-home": "Inicio", "nav-services": "Servicios", "nav-contact": "Contacto",
+        "contact-title": "Contáctanos", "label-name": "Nombre:", "label-message": "Mensaje:", "btn-send": "Enviar",
         "schedule-title": "Horario de Atención",
         "day-mon": "Lunes", "day-tue": "Martes", "day-wed": "Miércoles", "day-thu": "Jueves",
         "day-fri": "Viernes", "day-sat": "Sábado", "day-sun": "Domingo"
       },
       en: {
-        "nav-home": "Home", "nav-services": "Services", "nav-reviews": "Reviews", "nav-contact": "Contact",
-        "reviews-title": "What our clients say", "review-1": "Excellent service and flawless cuts! - Juan",
-        "review-2": "Best barber in Pueblo, no doubt. - Carlos", "contact-title": "Contact Us",
-        "label-name": "Name:", "label-message": "Message:", "btn-send": "Send",
+        "nav-home": "Home", "nav-services": "Services", "nav-contact": "Contact",
+        "contact-title": "Contact Us", "label-name": "Name:", "label-message": "Message:", "btn-send": "Send",
         "schedule-title": "Business Hours",
         "day-mon": "Monday", "day-tue": "Tuesday", "day-wed": "Wednesday", "day-thu": "Thursday",
         "day-fri": "Friday", "day-sat": "Saturday", "day-sun": "Sunday"
