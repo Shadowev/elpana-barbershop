@@ -432,3 +432,20 @@ footer li {
 .facebook-btn {
   background-color: #1877F2; /* Color azul Facebook */
 }
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.1);
+}
