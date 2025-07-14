@@ -1,28 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Barbería moderna en Pueblo, Colorado. Reserva tu cita por WhatsApp o Calendly.">
+  <meta name="author" content="El Pana Barbershop 1">
   <title>El Pana Barbershop 1</title>
-  <meta name="description" content="Barbería moderna en Pueblo, Colorado. Reserva por WhatsApp.">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css">
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js" defer></script>
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-<!-- Botón Reservar en esquina superior derecha -->
-<a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1" class="calendar-btn" target="_blank" rel="noopener">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="20" height="20">
-    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-9h5v5h-5z"/>
-  </svg>
-  <span>Reservar cita</span>
-</a>
-
 <header class="hero">
   <div class="overlay">
-    <img src="assets/logo.png" alt="Logo El Pana" class="logo">
+    <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
     <h1 id="title">El Pana Barbershop 1</h1>
     <p id="tagline">¡Tu estilo, nuestra pasión!</p>
     <button id="language-btn">English</button>
@@ -38,7 +32,7 @@
   </ul>
 </nav>
 
-<section class="about reveal" id="quienes">
+<section class="about reveal" id="about">
   <h2 id="about-title">¿Quiénes somos?</h2>
   <p id="about-text">Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!</p>
 </section>
@@ -46,61 +40,67 @@
 <section class="gallery reveal" id="galeria">
   <h2 id="gallery-title">Galería de cortes</h2>
   <div class="gallery-grid">
-    <a href="assets/corte1.JPG" data-lightbox="gallery"><img src="assets/corte1.JPG" alt="Corte 1"></a>
-    <a href="assets/corte2.jpeg" data-lightbox="gallery"><img src="assets/corte2.jpeg" alt="Corte 2"></a>
-    <a href="assets/corte2.jpg" data-lightbox="gallery"><img src="assets/corte2.jpg" alt="Corte 2 alt"></a>
-    <a href="assets/corte3.JPG" data-lightbox="gallery"><img src="assets/corte3.JPG" alt="Corte 3"></a>
-    <a href="assets/corte4.JPG" data-lightbox="gallery"><img src="assets/corte4.JPG" alt="Corte 4"></a>
-    <a href="assets/corte5.jpg" data-lightbox="gallery"><img src="assets/corte5.jpg" alt="Corte 5"></a>
-    <a href="assets/corte6.JPG" data-lightbox="gallery"><img src="assets/corte6.JPG" alt="Corte 6"></a>
-    <a href="assets/corte7.JPG" data-lightbox="gallery"><img src="assets/corte7.JPG" alt="Corte 7"></a>
-    <a href="assets/corte8.JPG" data-lightbox="gallery"><img src="assets/corte8.JPG" alt="Corte 8"></a>
-    <a href="assets/corte9.jpg" data-lightbox="gallery"><img src="assets/corte9.jpg" alt="Corte 9"></a>
+    <a href="assets/corte1.JPG" data-lightbox="gallery"><img src="assets/corte1.JPG" alt="Corte 1" loading="lazy" /></a>
+    <a href="assets/corte2.JPG" data-lightbox="gallery"><img src="assets/corte2.JPG" alt="Corte 2" loading="lazy" /></a>
+    <a href="assets/corte3.JPG" data-lightbox="gallery"><img src="assets/corte3.JPG" alt="Corte 3" loading="lazy" /></a>
+    <a href="assets/corte4.JPG" data-lightbox="gallery"><img src="assets/corte4.JPG" alt="Corte 4" loading="lazy" /></a>
+    <a href="assets/corte5.JPG" data-lightbox="gallery"><img src="assets/corte5.JPG" alt="Corte 5" loading="lazy" /></a>
+    <a href="assets/corte6.JPG" data-lightbox="gallery"><img src="assets/corte6.JPG" alt="Corte 6" loading="lazy" /></a>
+    <a href="assets/corte7.JPG" data-lightbox="gallery"><img src="assets/corte7.JPG" alt="Corte 7" loading="lazy" /></a>
+    <a href="assets/corte8.JPG" data-lightbox="gallery"><img src="assets/corte8.JPG" alt="Corte 8" loading="lazy" /></a>
+    <a href="assets/corte9.JPG" data-lightbox="gallery"><img src="assets/corte9.JPG" alt="Corte 9" loading="lazy" /></a>
+
   </div>
 </section>
-
 
 <section class="services reveal" id="servicios">
   <h2 id="services-title">Servicios y precios</h2>
   <ul class="price-list">
-    <li><a class="whatsapp-link" data-service="Corte de cabello">Corte de cabello - $27</a></li>
-    <li><a class="whatsapp-link" data-service="Corte + barba + cejas">Corte + barba + cejas - $35</a></li>
-    <li><a class="whatsapp-link" data-service="Diseño de barba">Diseño de barba - $20</a></li>
-    <li><a class="whatsapp-link" data-service="Corte para niños">Corte para niños - $25</a></li>
-    <li><a class="whatsapp-link" data-service="Color o tinte">Color o tinte - $40</a></li>
+    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20Clásico"><span>Corte Clásico</span><span>$27</span></a></li>
+    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20+%20Barba%20+%20Cejas"><span>Corte + Barba + Cejas</span><span>$35</span></a></li>
+    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Diseño%20de%20barba"><span>Diseño de barba</span><span>$20</span></a></li>
+    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20para%20niños"><span>Corte para niños</span><span>$25</span></a></li>
+    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Color%20o%20tinte"><span>Color o tinte</span><span>$40</span></a></li>
   </ul>
 </section>
 
 <section class="contact reveal" id="contacto">
   <h2 id="contact-title">Contáctanos</h2>
-  <form id="contact-form">
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <textarea placeholder="Mensaje" required></textarea>
-    <button type="submit" id="send-btn">Enviar</button>
-  </form>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+  <p><strong>Dirección:</strong> 1008 Constitution Rd, Pueblo, CO 81001</p>
+  <p><strong>Teléfono:</strong> <a href="tel:+17195042764">+1 719-504-2764</a></p>
+  <p><strong>WhatsApp:</strong> <a href="https://wa.me/17195042764" target="_blank">Chatea ahora</a></p>
+  <p><strong>Horario:</strong><br>
+     Lunes a Jueves: 1:00pm - 9:00pm<br>
+     Viernes y Sábado: 9:00am - 9:00pm<br>
+     Domingo: 11:00am - 7:00pm</p>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.5987300871125!2d-104.59707602502992!3d38.28879367186037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713a32d5baf8a25%3A0xe41f45cea7f2732e!2sPana%20Barber%20Shop1!5e0!3m2!1ses!2sus!4v1752490827831!5m2!1ses!2sus" 
+      width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 </section>
 
 <footer class="footer reveal">
-  <p>📍 1008 Constitution Rd, Pueblo, CO 81001</p>
-  <p>📞 <a href="tel:+17195042764">+1 (719) 504-2764</a></p>
-  <p id="hours-title">Horarios:</p>
-  <ul>
-    <li>Lunes a Jueves: 1:00pm - 9:00pm</li>
-    <li>Viernes y Sábado: 9:00am - 9:00pm</li>
-    <li>Domingo: 11:00am - 7:00pm</li>
-  </ul>
   <p>© 2025 El Pana Barbershop 1</p>
 </footer>
 
-<!-- Botones flotantes -->
+<a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1"
+   class="calendar-btn" target="_blank" aria-label="Reservar cita">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
+    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-9h5v5h-5z"/>
+  </svg>
+  <span id="book-btn">Reservar cita</span>
+</a>
+
 <div class="contact-buttons">
-  <a href="https://www.facebook.com/profile.php?id=61567723604191" class="btn-facebook" target="_blank">
-    <img src="assets/facebook-icon.png" alt="Facebook"> Facebook
+  <a href="https://www.facebook.com/profile.php?id=61567723604191"
+     class="btn-facebook" target="_blank" aria-label="Facebook">
+    <img src="assets/facebook-icon.png" alt="Facebook" class="icon" />
+    Facebook
   </a>
-  <a href="https://wa.me/17195042764" class="btn-whatsapp" target="_blank">
-    <img src="assets/whatsapp-icon.svg" alt="WhatsApp"> WhatsApp
+  <a href="https://wa.me/17195042764" class="btn-whatsapp" aria-label="WhatsApp" target="_blank">
+    <img src="assets/whatsapp-icon.svg" alt="WhatsApp" class="icon" />
+    WhatsApp
   </a>
 </div>
 
@@ -111,26 +111,6 @@
     easing: 'ease-out',
     origin: 'bottom',
     reset: false
-  });
-
-  document.getElementById("language-btn").addEventListener("click", () => {
-    const es = document.documentElement.lang === "es";
-    document.documentElement.lang = es ? "en" : "es";
-    document.getElementById("about-title").textContent = es ? "About Us" : "¿Quiénes somos?";
-    document.getElementById("about-text").textContent = es ? "We are a professional barbershop..." : "Somos una barbería...";
-    document.getElementById("gallery-title").textContent = es ? "Haircut Gallery" : "Galería de cortes";
-    document.getElementById("services-title").textContent = es ? "Services & Prices" : "Servicios y precios";
-    document.getElementById("contact-title").textContent = es ? "Contact Us" : "Contáctanos";
-    document.getElementById("send-btn").textContent = es ? "Send" : "Enviar";
-    document.getElementById("hours-title").textContent = es ? "Hours:" : "Horarios:";
-    document.getElementById("tagline").textContent = es ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!";
-    document.getElementById("language-btn").textContent = es ? "Español" : "English";
-  });
-
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Gracias por tu mensaje. Te contactaremos pronto.");
-    this.reset();
   });
 </script>
 
