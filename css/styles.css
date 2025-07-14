@@ -1,4 +1,5 @@
 
+/* Reset y base */
 * {
   margin: 0;
   padding: 0;
@@ -7,223 +8,217 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
-  color: #eee;
+  background: linear-gradient(to bottom, #111, #222);
+  color: #f5f5f5;
   line-height: 1.6;
   font-size: 16px;
+  padding-top: 60px;
 }
 
+/* Encabezado */
+.hero {
+  position: relative;
+  background: url('../assets/interior1.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  filter: drop-shadow(2px 2px 5px #000);
+}
+
+#title {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+#tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#language-btn {
+  padding: 10px 20px;
+  background: #ffcc00;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+#language-btn:hover {
+  background: #ffaa00;
+}
+
+/* Navegación */
 .navbar {
-  background: #000;
-  padding: 12px 10px;
-  position: sticky;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 100;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .navbar ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 30px;
+}
+
+.navbar li {
+  margin: 0 15px;
 }
 
 .navbar a {
-  color: #fff;
+  color: #ffcc00;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #ffa500;
+  color: #ffffff;
 }
 
-.hero {
-  background: url('../assets/interior1.jpg') no-repeat center center/cover;
-  text-align: center;
-  padding: 80px 20px;
-  position: relative;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px 20px;
-  border-radius: 12px;
-  display: inline-block;
-}
-
-.logo {
-  width: 100px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.1em;
-}
-
-button#language-btn {
-  margin-top: 15px;
-  padding: 10px 18px;
-  font-weight: bold;
-  background: #ffa500;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #000;
-}
-
+/* Secciones */
 section {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-h2 {
-  font-size: 1.8em;
+section h2 {
+  font-size: 2rem;
   margin-bottom: 20px;
-  text-align: center;
+  color: #ffcc00;
 }
 
-.price-list {
-  list-style: none;
-  padding: 0;
-}
-
-.price-list li {
-  display: flex;
-  justify-content: space-between;
-  background: #222;
-  padding: 15px 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  transition: background 0.3s ease;
-}
-
-.price-list li:hover {
-  background: #333;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: none;
-}
-
-form button {
-  background: #ffa500;
-  border: none;
-  padding: 12px 20px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #000;
-}
-
-.map-container {
-  margin-top: 20px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.footer {
-  text-align: center;
-  background: #000;
-  padding: 30px 20px;
-  font-size: 0.9em;
-}
-
-.footer a {
-  color: #ffa500;
-  text-decoration: none;
-}
-
-.contact-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 999;
-}
-
-.contact-buttons a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: white;
-  border-radius: 30px;
-  padding: 10px 15px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-}
-
-.contact-buttons a:hover {
-  transform: scale(1.05);
-}
-
-.btn-whatsapp {
-  background-color: #25D366;
-  color: white;
-}
-
-.btn-facebook {
-  background-color: #1877F2;
-  color: white;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
+section p, li {
+  color: #ccc;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
-  margin-top: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.3s;
 }
-
 .gallery-grid img:hover {
   transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
 }
 
+/* Precios */
+.price-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  margin: 10px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.price-list li:hover {
+  background: #333;
+}
+
+/* Contacto */
+.map-container iframe {
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  height: 300px;
+}
+
+/* Botones principales */
 .calendar-btn {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #ff8c00;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 30px;
+  top: 15px;
+  right: 15px;
+  background: #ffcc00;
+  color: #000;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 1000;
+  transition: background 0.3s;
+  z-index: 200;
+}
+.calendar-btn:hover {
+  background: #ffaa00;
 }
 
-.calendar-btn:hover {
-  background: #ffa500;
+/* Botones flotantes */
+.contact-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 150;
+}
+
+.btn-whatsapp, .btn-facebook {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+}
+.btn-facebook {
+  background-color: #1877F2;
+}
+.btn-whatsapp:hover, .btn-facebook:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #111;
+  padding: 30px 10px;
+  color: #777;
+  font-size: 14px;
 }
