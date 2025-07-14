@@ -113,6 +113,27 @@
     reset: false
   });
 </script>
+<script>
+  const languageBtn = document.getElementById('language-btn');
+  let isSpanish = true;
+
+  languageBtn.addEventListener('click', () => {
+    isSpanish = !isSpanish;
+    languageBtn.textContent = isSpanish ? 'English' : 'Español';
+
+    // Títulos y textos en ambas versiones
+    document.getElementById('title').textContent = isSpanish ? 'El Pana Barbershop 1' : 'El Pana Barbershop 1';
+    document.getElementById('tagline').textContent = isSpanish ? '¡Tu estilo, nuestra pasión!' : 'Your style, our passion!';
+    document.getElementById('about-title').textContent = isSpanish ? '¿Quiénes somos?' : 'About Us';
+    document.getElementById('about-text').textContent = isSpanish
+      ? 'Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!'
+      : 'We are a professional barbershop in Pueblo, CO. We offer modern, classic, and clean shaves. Book your appointment and enjoy the experience!';
+    document.getElementById('gallery-title').textContent = isSpanish ? 'Galería de cortes' : 'Haircut Gallery';
+    document.getElementById('services-title').textContent = isSpanish ? 'Servicios y precios' : 'Services and Prices';
+    document.getElementById('contact-title').textContent = isSpanish ? 'Contáctanos' : 'Contact Us';
+    document.getElementById('book-btn').textContent = isSpanish ? 'Reservar cita' : 'Book Now';
+  });
+</script>
 
 </body>
 </html>
