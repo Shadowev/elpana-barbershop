@@ -532,6 +532,11 @@ footer li {
 .calendar-btn .icon {
   fill: white;
 }
+.map-container {
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
 
 @media (max-width: 600px) {
   .calendar-btn {
