@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="google-site-verification" content="xihpJme6xtHFMiO5Wl_MfVXhrgz0qMK7jkLDcQqI4BA" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Pana Barbershop 1</title>
   <meta name="description" content="Barbería moderna en Pueblo, Colorado. Citas por WhatsApp, cortes clásicos, diseños, niños y color. ¡Reserva hoy con El Pana Barbershop 1!">
   <meta name="keywords" content="barbería Pueblo, cortes de cabello Pueblo CO, barbero cerca de mí, barber shop Pueblo Colorado, El Pana Barbershop 1">
   <meta name="robots" content="index, follow">
@@ -17,83 +17,119 @@
   <meta name="twitter:title" content="El Pana Barbershop 1 - Barbería en Pueblo">
   <meta name="twitter:description" content="Cortes clásicos, diseño de barba, niños, tinte y más. ¡Reserva ya!">
   <meta name="twitter:image" content="https://www.elpanabarbershop1.com/assets/interior1.jpg">
+  <title>El Pana Barbershop 1</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1" class="calendar-btn top-right" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="white" width="20" height="20">
+        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-9h5v5h-5z"/>
+      </svg>
+      <span id="book-btn">Reservar cita</span>
+    </a>
+  </nav>
 
-<nav class="navbar">
-  <ul>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#precios">Precios</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#reserva">Reservar cita</a></li>
-  </ul>
-</nav>
+  <header class="hero">
+    <div class="overlay">
+      <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
+      <h1 id="title">El Pana Barbershop 1</h1>
+      <p id="tagline">¡Tu estilo, nuestra pasión!</p>
+      <button id="language-btn">English</button>
+    </div>
+  </header>
 
-<a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1"
-   class="btn-top-right"
-   target="_blank"
-   rel="noopener"
-   aria-label="Reserva tu cita en El Pana Barbershop 1">
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-7-9h5v5h-5z"/>
-  </svg>
-  <span>Reservar cita</span>
-</a>
+  <section class="about reveal">
+    <h2 id="about-title">¿Quiénes somos?</h2>
+    <p id="about-text">Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!</p>
+  </section>
 
-<header class="hero">
-  <div class="overlay">
-    <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
-    <h1>El Pana Barbershop 1</h1>
-    <p>¡Tu estilo, nuestra pasión!</p>
+  <section class="gallery reveal" id="galeria">
+    <h2 id="gallery-title">Galería de cortes</h2>
+    <div class="gallery-grid">
+      <!-- Aquí irán tus imágenes desde assets/ -->
+      <a href="assets/corte1.JPG" data-lightbox="gallery"><img src="assets/corte1.JPG" alt="Corte 1"></a>
+      <a href="assets/corte2.jpg" data-lightbox="gallery"><img src="assets/corte2.jpg" alt="Corte 2"></a>
+    </div>
+  </section>
+
+  <section class="services reveal" id="servicios">
+    <h2 id="services-title">Servicios y precios</h2>
+    <ul class="price-list">
+      <li><a href="#" class="whatsapp-link" data-service="Corte Clásico"><span>Corte Clásico</span><span>$27</span></a></li>
+      <li><a href="#" class="whatsapp-link" data-service="Corte + Barba + Cejas"><span>Corte + Barba + Cejas</span><span>$35</span></a></li>
+      <li><a href="#" class="whatsapp-link" data-service="Diseño de barba"><span>Diseño de barba</span><span>$20</span></a></li>
+      <li><a href="#" class="whatsapp-link" data-service="Corte para niños"><span>Corte para niños</span><span>$25</span></a></li>
+      <li><a href="#" class="whatsapp-link" data-service="Color o tinte"><span>Color o tinte</span><span>$40</span></a></li>
+    </ul>
+  </section>
+
+  <section class="contact reveal" id="contacto">
+    <h2 id="contact-title">Contáctanos</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
+      <textarea name="message" placeholder="Mensaje" required></textarea>
+      <button type="submit" id="send-btn">Enviar</button>
+    </form>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer class="footer reveal">
+    <p>📍 1008 Constitution Rd, Pueblo, CO 81001</p>
+    <p>📞 <a href="tel:+17195042764">+1 (719) 504-2764</a></p>
+    <p id="hours-title">Horarios:</p>
+    <ul>
+      <li>Lunes a Jueves: 1:00pm - 9:00pm</li>
+      <li>Viernes y Sábado: 9:00am - 9:00pm</li>
+      <li>Domingo: 11:00am - 7:00pm</li>
+    </ul>
+    <p>© 2025 El Pana Barbershop 1</p>
+  </footer>
+
+  <div class="contact-buttons">
+    <a href="https://www.facebook.com/profile.php?id=61567723604191" class="btn-facebook" target="_blank" rel="noopener"><img src="assets/facebook-icon.png" alt="Facebook" class="icon">Facebook</a>
+    <a href="https://wa.me/17195042764" class="btn-whatsapp" target="_blank" rel="noopener"><img src="assets/whatsapp-icon.svg" alt="WhatsApp" class="icon">WhatsApp</a>
   </div>
-</header>
 
-<section id="galeria" class="gallery">
-  <h2>Galería de cortes</h2>
-  <div class="gallery-grid">
-    <img src="assets/corte1.JPG" alt="Corte 1">
-    <img src="assets/corte2.jpg" alt="Corte 2">
-    <img src="assets/corte3.JPG" alt="Corte 3">
-    <img src="assets/corte4.JPG" alt="Corte 4">
-    <img src="assets/corte5.jpg" alt="Corte 5">
-  </div>
-</section>
+  <script>
+    ScrollReveal().reveal('.reveal', { distance: '50px', duration: 1000, easing: 'ease-out', origin: 'bottom', reset: false });
 
-<section id="servicios" class="services">
-  <h2>Servicios y precios</h2>
-  <ul class="price-list">
-    <li><span>Corte Clásico</span><span>$27</span></li>
-    <li><span>Corte + Barba + Cejas</span><span>$35</span></li>
-    <li><span>Diseño de barba</span><span>$20</span></li>
-    <li><span>Corte para niños</span><span>$25</span></li>
-    <li><span>Color o tinte</span><span>$40</span></li>
-  </ul>
-</section>
+    function actualizarEnlacesWhatsApp(lang) {
+      const enlaces = document.querySelectorAll('.whatsapp-link');
+      enlaces.forEach(link => {
+        const servicio = link.getAttribute('data-service');
+        const mensaje = lang === 'es'
+          ? `Hola, quiero reservar una cita para ${servicio}`
+          : `Hi, I'd like to book an appointment for ${servicio}`;
+        link.href = `https://wa.me/17195042764?text=${encodeURIComponent(mensaje)}`;
+      });
+    }
 
-<section id="contacto" class="contact">
-  <h2>Contáctanos</h2>
-  <form>
-    <input type="text" placeholder="Tu nombre" required>
-    <input type="email" placeholder="Tu correo" required>
-    <textarea placeholder="Mensaje" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
+    document.getElementById("language-btn").addEventListener("click", () => {
+      const lang = document.documentElement.lang === "es" ? "en" : "es";
+      document.documentElement.lang = lang;
+      actualizarEnlacesWhatsApp(lang);
+    });
 
-<section class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.5987300871125!2d-104.59707602502992!3d38.28879367186037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713a32d5baf8a25%3A0xe41f45cea7f2732e!2sPana%20Barber%20Shop1!5e0!3m2!1ses!2sus!4v1752490827831!5m2!1ses!2sus"
-    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Gracias por tu mensaje. Te contactaremos pronto.");
+      this.reset();
+    });
 
-<footer class="footer">
-  <p>📍 1008 Constitution Rd, Pueblo, CO 81001</p>
-  <p>📞 <a href="tel:+17195042764">+1 (719) 504-2764</a></p>
-  <p>Horario: Lun-Jue 1-9PM | Vie-Sáb 9AM-9PM | Dom 11AM-7PM</p>
-  <p>© 2025 El Pana Barbershop 1</p>
-</footer>
-
+    actualizarEnlacesWhatsApp("es");
+  </script>
 </body>
 </html>
