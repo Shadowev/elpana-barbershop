@@ -267,3 +267,44 @@ footer li {
   height: 24px;
   margin-right: 8px;
 }
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 30px auto;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+  color: white;
+  width: 250px;
+}
+
+.social-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.social-button.facebook {
+  background-color: #1877F2;
+}
+
+.social-button.whatsapp {
+  background-color: #25D366;
+}
