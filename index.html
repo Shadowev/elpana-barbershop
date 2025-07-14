@@ -148,6 +148,36 @@
         "hours-title": isSpanish ? "Hours:" : "Horarios:",
         "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
         "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
+          actualizarEnlacesWhatsApp(isSpanish ? "en" : "es");
+});
+
+function actualizarEnlacesWhatsApp(lang) {
+  const enlaces = document.querySelectorAll('.whatsapp-link');
+  enlaces.forEach(link => {
+    const servicio = link.getAttribute('data-service');
+    let mensaje;
+
+    if (lang === 'es') {
+      mensaje = `Hola, quiero reservar una cita para ${servicio}`;
+    } else {
+      const traducciones = {
+        "Corte de cabello": "Haircut",
+        "Afeitado de barba": "Beard shave",
+        "Corte + barba + cejas": "Haircut + beard + eyebrows",
+        "Corte para niños": "Kids haircut"
+      };
+      const servicioTraducido = traducciones[servicio] || servicio;
+      mensaje = `Hi, I'd like to book an appointment for ${servicioTraducido}`;
+    }
+
+    const url = `https://wa.me/17195042764?text=${encodeURIComponent(mensaje)}`;
+    link.setAttribute('href', url);
+  });
+}
+
+// Ejecutar una vez al cargar
+actualizarEnlacesWhatsApp(document.documentElement.lang);
+
         "language-btn": isSpanish ? "Español" : "English"
       };
 
