@@ -609,3 +609,6 @@ footer li {
   background-color: #ffcc00;
   color: #000;
 }
+html {
+  scroll-behavior: smooth;
+}
