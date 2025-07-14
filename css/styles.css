@@ -575,3 +575,37 @@ footer li {
   background-color: #ffcc00;
   color: #000;
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #ffcc00;
+  color: #000;
+}
