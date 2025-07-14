@@ -479,7 +479,7 @@ footer li {
 }
 .calendar-btn {
   position: fixed;
-  bottom: 100px;
+  bottom: 170px; /* <- subido respecto al botón de WhatsApp */
   right: 20px;
   background-color: #ff9900;
   color: white;
@@ -493,6 +493,7 @@ footer li {
   transition: transform 0.2s ease, background-color 0.3s ease;
   z-index: 1000;
 }
+
 
 .calendar-btn .icon {
   width: 24px;
