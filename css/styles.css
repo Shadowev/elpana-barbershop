@@ -230,3 +230,26 @@ footer a {
     font-size: 14px;
   }
 }
+.calendar-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #f9a825;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+.calendar-btn:hover {
+  background: #f57f17;
+}
+.calendar-btn svg {
+  flex-shrink: 0;
+}
