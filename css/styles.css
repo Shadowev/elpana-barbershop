@@ -12,76 +12,135 @@ body {
   line-height: 1.6;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-  padding: 10px 20px;
+nav.navbar {
+  background-color: #000;
+  padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.navbar ul {
-  list-style: none;
+nav.navbar ul {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
 }
 
-.navbar a {
-  color: white;
+nav.navbar a {
   text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-top-right {
-  background-color: #ff8000;
   color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .hero {
   background: url('../assets/interior1.jpg') center/cover no-repeat;
   height: 400px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 40px;
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
   border-radius: 12px;
 }
 
 .logo {
-  max-width: 150px;
-  margin-bottom: 20px;
+  max-width: 140px;
+  margin-bottom: 15px;
 }
 
 h1 {
-  color: #ffcc00;
-  font-size: 2em;
+  font-size: 2rem;
+  color: #fff;
+}
+
+#tagline {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+#language-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #ff9800;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
 }
 
 .price-list {
   list-style: none;
-  padding: 20px;
+  padding: 0;
 }
 
 .price-list li {
   background: #222;
-  margin: 10px 0;
-  padding: 10px 20px;
+  margin-bottom: 12px;
+  padding: 12px 20px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  transition: background 0.3s;
+}
+
+.price-list li:hover {
+  background: #333;
+}
+
+form input, form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background-color: #000;
+  color: #ccc;
+  padding: 30px 20px;
 }
 
 .contact-buttons {
@@ -90,24 +149,55 @@ h1 {
   right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  z-index: 999;
 }
 
-.contact-buttons a {
-  padding: 10px 15px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.btn-whatsapp, .btn-facebook {
   display: flex;
   align-items: center;
-  gap: 10px;
+  background-color: #25d366;
+  padding: 10px 14px;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s;
 }
 
 .btn-facebook {
-  background-color: #1877F2;
+  background-color: #1877f2;
 }
 
-.btn-whatsapp {
-  background-color: #25D366;
+.btn-whatsapp:hover, .btn-facebook:hover {
+  opacity: 0.85;
+}
+
+.btn-whatsapp .icon, .btn-facebook .icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  object-fit: contain;
+}
+
+.calendar-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.calendar-btn .icon {
+  margin-right: 6px;
 }
