@@ -633,6 +633,37 @@ html {
 .calendar-btn:hover {
   transform: scale(1.05);
 }
+.calendar-btn {
+  position: fixed;
+  bottom: 180px; /* Encima del de Facebook y WhatsApp */
+  right: 20px;
+  background-color: #ff9900;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+  max-width: 80%; /* Para evitar que ocupe todo en móviles */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-btn:hover {
+  transform: scale(1.05);
+}
+
+.calendar-btn .icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
 
 .calendar-btn .icon {
   width: 20px;
