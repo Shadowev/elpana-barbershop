@@ -128,64 +128,85 @@
 
 
   <script>
-    ScrollReveal().reveal('.reveal', { distance: '50px', duration: 1000, easing: 'ease-out', origin: 'bottom', reset: false });
-
-    document.getElementById("language-btn").addEventListener("click", () => {
-      const currentLang = document.documentElement.lang;
-      const isSpanish = currentLang === "es";
-      document.documentElement.lang = isSpanish ? "en" : "es";
-
-      const translations = {
-  "about-title": isSpanish ? "About Us" : "¿Quiénes somos?",
-  "about-text": isSpanish
-    ? "We are a professional barbershop in Pueblo, CO. Modern and classic cuts. Book your appointment today!"
-    : "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
-  "gallery-title": isSpanish ? "Gallery" : "Galería de cortes",
-  "services-title": isSpanish ? "Services & Prices" : "Servicios y precios",
-  "cut": isSpanish ? "Haircut" : "Corte de cabello",
-  "beard": isSpanish ? "Beard shave" : "Afeitado de barba",
-  "combo": isSpanish ? "Haircut + beard" : "Corte + barba",
-  "contact-title": isSpanish ? "Contact Us" : "Contáctanos",
-  "send-btn": isSpanish ? "Send" : "Enviar",
-  "hours-title": isSpanish ? "Hours:" : "Horarios:",
-  "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
-  "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
-  "language-btn": isSpanish ? "Español" : "English"
-};
-
-function actualizarEnlacesWhatsApp(lang) {
-  const enlaces = document.querySelectorAll('.whatsapp-link');
-  enlaces.forEach(link => {
-    const servicio = link.getAttribute('data-service');
-    let mensaje;
-
-    if (lang === 'es') {
-      mensaje = `Hola, quiero reservar una cita para ${servicio}`;
-    } else {
-      const traducciones = {
-        "Corte de cabello": "Haircut",
-        "Afeitado de barba": "Beard shave",
-        "Corte + barba + cejas": "Haircut + beard + eyebrows",
-        "Corte para niños": "Kids haircut"
-      };
-      const servicioTraducido = traducciones[servicio] || servicio;
-      mensaje = `Hi, I'd like to book an appointment for ${servicioTraducido}`;
-    }
-
-    const url = `https://wa.me/17195042764?text=${encodeURIComponent(mensaje)}`;
-    link.setAttribute('href', url);
+  ScrollReveal().reveal('.reveal', {
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease-out',
+    origin: 'bottom',
+    reset: false
   });
-}
 
-// Ejecutar una vez al cargar
-actualizarEnlacesWhatsApp(document.documentElement.lang);
+  // Función para actualizar enlaces de WhatsApp según el idioma
+  function actualizarEnlacesWhatsApp(lang) {
+    const enlaces = document.querySelectorAll('.whatsapp-link');
+    enlaces.forEach(link => {
+      const servicio = link.getAttribute('data-service');
+      let mensaje;
 
+      if (lang === 'es') {
+        mensaje = `Hola, quiero reservar una cita para ${servicio}`;
+      } else {
+        const traducciones = {
+          "Corte de cabello": "Haircut",
+          "Afeitado de barba": "Beard shave",
+          "Corte + barba + cejas": "Haircut + beard + eyebrows",
+          "Corte para niños": "Kids haircut"
+        };
+        const servicioTraducido = traducciones[servicio] || servicio;
+        mensaje = `Hi, I'd like to book an appointment for ${servicioTraducido}`;
+      }
 
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Gracias por tu mensaje. Te contactaremos pronto.");
-      this.reset();
+      const url = `https://wa.me/17195042764?text=${encodeURIComponent(mensaje)}`;
+      link.setAttribute('href', url);
     });
-  </script>
+  }
+
+  // Ejecutar una vez al cargar la página
+  actualizarEnlacesWhatsApp(document.documentElement.lang);
+
+  // Evento del botón de idioma
+  document.getElementById("language-btn").addEventListener("click", () => {
+    const currentLang = document.documentElement.lang;
+    const isSpanish = currentLang === "es";
+    document.documentElement.lang = isSpanish ? "en" : "es";
+
+    const translations = {
+      "about-title": isSpanish ? "About Us" : "¿Quiénes somos?",
+      "about-text": isSpanish
+        ? "We are a professional barbershop in Pueblo, CO. Modern and classic cuts. Book your appointment today!"
+        : "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
+      "gallery-title": isSpanish ? "Gallery" : "Galería de cortes",
+      "services-title": isSpanish ? "Services & Prices" : "Servicios y precios",
+      "cut": isSpanish ? "Haircut" : "Corte de cabello",
+      "beard": isSpanish ? "Beard shave" : "Afeitado de barba",
+      "combo": isSpanish ? "Haircut + beard" : "Corte + barba",
+      "contact-title": isSpanish ? "Contact Us" : "Contáctanos",
+      "send-btn": isSpanish ? "Send" : "Enviar",
+      "hours-title": isSpanish ? "Hours:" : "Horarios:",
+      "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
+      "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
+      "language-btn": isSpanish ? "Español" : "English"
+    };
+
+    Object.keys(translations).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = translations[id];
+    });
+
+    // Cambiar texto del botón
+    document.getElementById("language-btn").textContent = isSpanish ? "Español" : "English";
+
+    // Actualizar enlaces de WhatsApp
+    actualizarEnlacesWhatsApp(isSpanish ? "en" : "es");
+  });
+
+  // Formulario de contacto
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Gracias por tu mensaje. Te contactaremos pronto.");
+    this.reset();
+  });
+</script>
+
 </body>
 </html>
