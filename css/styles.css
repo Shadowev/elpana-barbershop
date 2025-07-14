@@ -1,3 +1,4 @@
+
 /* Reset básico */
 * {
   margin: 0;
@@ -102,12 +103,22 @@ section h2 {
   margin-top: 20px;
 }
 
-.gallery-grid img {
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.1);
 }
 
 /* SERVICES */
@@ -121,15 +132,31 @@ section h2 {
 .price-list li {
   display: flex;
   justify-content: space-between;
-  padding: 12px 20px;
-  background-color: #222;
+  padding: 12px 16px;
   margin: 10px 0;
-  border-radius: 5px;
-  transition: background 0.3s;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .price-list li:hover {
   background-color: #333;
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.price-list a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s;
+}
+
+.price-list a:hover {
+  background-color: #222;
 }
 
 /* CONTACT */
@@ -192,55 +219,6 @@ footer li {
 }
 
 /* WHATSAPP BUTTON */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  font-size: 26px;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.8em;
-  }
-
-  section h2 {
-    font-size: 1.6em;
-  }
-
-  .price-list li {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .overlay {
-    padding: 30px 15px;
-  }
-
-  #language-btn {
-    padding: 6px 10px;
-    font-size: 0.9em;
-  }
-}
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -258,323 +236,82 @@ footer li {
   z-index: 1000;
   transition: all 0.2s ease-in-out;
 }
+
 .btn-whatsapp:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
+
 .btn-whatsapp .icon {
   width: 24px;
   height: 24px;
   margin-right: 8px;
 }
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin: 30px auto;
-}
 
-.social-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease-in-out;
-  color: white;
-  width: 250px;
-}
-
-.social-button img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.social-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.social-button.facebook {
-  background-color: #1877F2;
-}
-
-.social-button.whatsapp {
-  background-color: #25D366;
-}
-.contact-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #000;
-  flex-wrap: wrap;
-}
-
-.social-button {
-  display: inline-flex;
-  align-items: center;
-  background-color: #3b5998; /* Facebook color */
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
-}
-
-.social-button img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.social-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.social-button.whatsapp {
-  background-color: #25D366;
-}
+/* FACEBOOK BUTTON */
 .btn-facebook {
-  display: inline-flex;
-  align-items: center;
-  background-color: #1877f2;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  position: fixed;
-  bottom: 90px; /* flotante encima del WhatsApp */
-  right: 20px;
-  z-index: 1000;
-  transition: all 0.2s ease-in-out;
-}
-.btn-facebook:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-.btn-facebook .icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-  object-fit: contain;
-}
-.btn-facebook {
-  position: fixed;
-  bottom: 90px; /* Encima del de WhatsApp */
-  right: 20px;
-  background-color: #1877F2;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  animation: pulse 2s infinite;
-}
-.btn-facebook:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-.btn-facebook .icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-.floating-btn {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  background-color: #25D366; /* WhatsApp verde por defecto */
+  background-color: #1877F2;
   color: white;
-  padding: 10px 16px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  padding: 10px 15px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   z-index: 1000;
+  display: inline-flex;
+  align-items: center;
   transition: all 0.2s ease-in-out;
 }
 
-.floating-btn:hover {
+.btn-facebook:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-.floating-btn .icon {
-  width: 22px;
-  height: 22px;
-}
-
-/* Estilo específico para el botón de Facebook */
-.facebook-btn {
-  background-color: #1877F2; /* Color azul Facebook */
-}
-.gallery-grid a {
-  display: block;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.gallery-grid a:hover img {
-  transform: scale(1.1);
-}
-.price-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 16px;
-  margin: 10px 0;
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.price-list li:hover {
-  background-color: #333;
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-.price-list a {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 15px;
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid #444;
-  transition: background-color 0.3s;
-}
-
-.price-list a:hover {
-  background-color: #222;
-}
-.calendar-btn {
-  position: fixed;
-  top: 20px;            /* 👈 Posición superior */
-  right: 20px;          /* 👈 Pegado a la derecha */
-  background-color: #ff9900;
-  color: white;
-  border-radius: 50px;
-  padding: 10px 20px;
-  font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  z-index: 1000;
-}
-
-
-
-.calendar-btn .icon {
+.btn-facebook .icon {
   width: 24px;
   height: 24px;
   margin-right: 8px;
 }
 
-.calendar-btn:hover {
-  background-color: #e68a00;
-  transform: scale(1.05);
-}
+/* CALENDAR BUTTON */
 .calendar-btn {
   position: fixed;
-  top: 20px;
+  bottom: 180px;
   right: 20px;
-  background-color: #0077cc;
+  background-color: #ff9900;
   color: white;
-  border-radius: 40px;
-  padding: 10px 20px;
-  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 1000;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calendar-btn:hover {
-  background-color: #005fa3;
   transform: scale(1.05);
 }
 
 .calendar-btn .icon {
+  width: 20px;
+  height: 20px;
   fill: white;
 }
-.map-container {
-  max-width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-}
 
-@media (max-width: 600px) {
-  .calendar-btn {
-    display: none;
-  }
-}
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #111;
-  padding: 10px 0;
-  z-index: 1001;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #f0f0f0;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-  background-color: #ffcc00;
-  color: #000;
-}
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -609,64 +346,28 @@ footer li {
   background-color: #ffcc00;
   color: #000;
 }
-html {
-  scroll-behavior: smooth;
-}
-.calendar-btn {
-  position: fixed;
-  bottom: 140px; /* Encima del botón de WhatsApp */
-  right: 20px;
-  background-color: #ff9900;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-  transition: transform 0.2s ease;
-}
 
-.calendar-btn:hover {
-  transform: scale(1.05);
-}
-.calendar-btn {
-  position: fixed;
-  bottom: 180px; /* Encima del de Facebook y WhatsApp */
-  right: 20px;
-  background-color: #ff9900;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-  transition: transform 0.2s ease;
-  max-width: 80%; /* Para evitar que ocupe todo en móviles */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
 
-.calendar-btn:hover {
-  transform: scale(1.05);
-}
+  section h2 {
+    font-size: 1.6em;
+  }
 
-.calendar-btn .icon {
-  width: 20px;
-  height: 20px;
-  fill: white;
-}
+  .price-list li {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.calendar-btn .icon {
-  width: 20px;
-  height: 20px;
-  fill: white;
+  .overlay {
+    padding: 30px 15px;
+  }
+
+  #language-btn {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
 }
