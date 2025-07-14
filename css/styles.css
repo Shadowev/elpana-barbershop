@@ -253,3 +253,19 @@ footer a {
 .calendar-btn svg {
   flex-shrink: 0;
 }
+.language-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #ffcc00;
+  color: #111;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+.language-btn:hover {
+  background-color: #e0b800;
+}
