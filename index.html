@@ -125,9 +125,7 @@
 
 </div>
 
-
-
-  <script>
+<script>
   ScrollReveal().reveal('.reveal', {
     distance: '50px',
     duration: 1000,
@@ -136,7 +134,6 @@
     reset: false
   });
 
-  // Función para actualizar enlaces de WhatsApp según el idioma
   function actualizarEnlacesWhatsApp(lang) {
     const enlaces = document.querySelectorAll('.whatsapp-link');
     enlaces.forEach(link => {
@@ -161,10 +158,6 @@
     });
   }
 
-  // Ejecutar una vez al cargar la página
-  actualizarEnlacesWhatsApp(document.documentElement.lang);
-
-  // Evento del botón de idioma
   document.getElementById("language-btn").addEventListener("click", () => {
     const currentLang = document.documentElement.lang;
     const isSpanish = currentLang === "es";
@@ -193,19 +186,18 @@
       if (el) el.textContent = translations[id];
     });
 
-    // Cambiar texto del botón
     document.getElementById("language-btn").textContent = isSpanish ? "Español" : "English";
-
-    // Actualizar enlaces de WhatsApp
     actualizarEnlacesWhatsApp(isSpanish ? "en" : "es");
   });
 
-  // Formulario de contacto
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Gracias por tu mensaje. Te contactaremos pronto.");
     this.reset();
   });
+
+  // Ejecutar al cargar la página
+  actualizarEnlacesWhatsApp(document.documentElement.lang);
 </script>
 
 </body>
