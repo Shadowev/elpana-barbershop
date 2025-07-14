@@ -135,6 +135,41 @@
     document.getElementById('book-btn').textContent = isSpanish ? 'Reservar cita' : 'Book Now';
   });
 </script>
+<script>
+  const translations = {
+    es: {
+      title: "El Pana Barbershop 1",
+      slogan: "Tu estilo, nuestra pasión",
+      "nav.gallery": "Galería",
+      "nav.services": "Servicios",
+      "nav.hours": "Horarios",
+      "nav.location": "Ubicación",
+      "nav.contact": "Contacto",
+    },
+    en: {
+      title: "El Pana Barbershop 1",
+      slogan: "Your style, our passion",
+      "nav.gallery": "Gallery",
+      "nav.services": "Services",
+      "nav.hours": "Hours",
+      "nav.location": "Location",
+      "nav.contact": "Contact",
+    }
+  };
 
+  const toggleBtn = document.getElementById("languageToggle");
+  let currentLang = "es";
+
+  toggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    toggleBtn.textContent = currentLang === "es" ? "English" : "Español";
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[currentLang][key]) {
+        el.textContent = translations[currentLang][key];
+      }
+    });
+  });
+</script>
 </body>
 </html>
