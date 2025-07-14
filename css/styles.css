@@ -366,3 +366,9 @@ footer li {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
+.btn-facebook .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  object-fit: contain;
+}
