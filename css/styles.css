@@ -506,3 +506,35 @@ footer li {
   background-color: #e68a00;
   transform: scale(1.05);
 }
+.calendar-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calendar-btn:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+.calendar-btn .icon {
+  fill: white;
+}
+
+@media (max-width: 600px) {
+  .calendar-btn {
+    display: none;
+  }
+}
