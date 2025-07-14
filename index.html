@@ -178,16 +178,6 @@ function actualizarEnlacesWhatsApp(lang) {
 // Ejecutar una vez al cargar
 actualizarEnlacesWhatsApp(document.documentElement.lang);
 
-        "language-btn": isSpanish ? "Español" : "English"
-      };
-
-      Object.keys(translations).forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = translations[id];
-      });
-
-      document.getElementById("language-btn").textContent = isSpanish ? "Español" : "English";
-    });
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
       e.preventDefault();
