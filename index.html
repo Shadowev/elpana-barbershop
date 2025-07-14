@@ -136,20 +136,22 @@
       document.documentElement.lang = isSpanish ? "en" : "es";
 
       const translations = {
-        "about-title": isSpanish ? "About Us" : "¿Quiénes somos?",
-        "about-text": isSpanish ? "We are a professional barbershop in Pueblo, CO. Modern and classic cuts. Book your appointment today!" : "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
-        "gallery-title": isSpanish ? "Gallery" : "Galería de cortes",
-        "services-title": isSpanish ? "Services & Prices" : "Servicios y precios",
-        "cut": isSpanish ? "Haircut" : "Corte de cabello",
-        "beard": isSpanish ? "Beard shave" : "Afeitado de barba",
-        "combo": isSpanish ? "Haircut + beard" : "Corte + barba",
-        "contact-title": isSpanish ? "Contact Us" : "Contáctanos",
-        "send-btn": isSpanish ? "Send" : "Enviar",
-        "hours-title": isSpanish ? "Hours:" : "Horarios:",
-        "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
-        "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
-          actualizarEnlacesWhatsApp(isSpanish ? "en" : "es");
-});
+  "about-title": isSpanish ? "About Us" : "¿Quiénes somos?",
+  "about-text": isSpanish
+    ? "We are a professional barbershop in Pueblo, CO. Modern and classic cuts. Book your appointment today!"
+    : "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
+  "gallery-title": isSpanish ? "Gallery" : "Galería de cortes",
+  "services-title": isSpanish ? "Services & Prices" : "Servicios y precios",
+  "cut": isSpanish ? "Haircut" : "Corte de cabello",
+  "beard": isSpanish ? "Beard shave" : "Afeitado de barba",
+  "combo": isSpanish ? "Haircut + beard" : "Corte + barba",
+  "contact-title": isSpanish ? "Contact Us" : "Contáctanos",
+  "send-btn": isSpanish ? "Send" : "Enviar",
+  "hours-title": isSpanish ? "Hours:" : "Horarios:",
+  "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
+  "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
+  "language-btn": isSpanish ? "Español" : "English"
+};
 
 function actualizarEnlacesWhatsApp(lang) {
   const enlaces = document.querySelectorAll('.whatsapp-link');
