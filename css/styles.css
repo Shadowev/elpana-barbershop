@@ -464,3 +464,16 @@ footer li {
   transform: scale(1.02);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
+.price-list a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s;
+}
+
+.price-list a:hover {
+  background-color: #222;
+}
