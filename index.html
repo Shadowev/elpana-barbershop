@@ -178,9 +178,9 @@
       "hours-title": isSpanish ? "Hours:" : "Horarios:",
       "title": isSpanish ? "El Pana Barbershop 1" : "El Pana Barbershop 1",
       "tagline": isSpanish ? "Your style, our passion!" : "¡Tu estilo, nuestra pasión!",
-      "language-btn": isSpanish ? "Español" : "English"
-    };
-
+   "language-btn": isSpanish ? "Español" : "English",
+  "book-btn": isSpanish ? "Book Now" : "Reservar cita"
+};
     Object.keys(translations).forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = translations[id];
@@ -199,6 +199,15 @@
   // Ejecutar al cargar la página
   actualizarEnlacesWhatsApp(document.documentElement.lang);
 </script>
+<a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1"
+   class="btn-calendly"
+   target="_blank"
+   rel="noopener"
+   aria-label="Reserva tu cita en El Pana Barbershop 1">
+  <img src="assets/calendar-icon.png" alt="Calendario" class="icon" aria-hidden="true" />
+  <span id="book-btn">Reservar cita</span>
+
+</a>
 
 </body>
 </html>
