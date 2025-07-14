@@ -1,203 +1,237 @@
 
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
   color: #eee;
   line-height: 1.6;
+  font-size: 16px;
+  padding-top: 60px;
 }
 
-nav.navbar {
+/* Barra de navegación */
+.navbar {
   background-color: #000;
   padding: 10px 0;
-  position: sticky;
+  text-align: center;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  width: 100%;
+  z-index: 999;
 }
-
-nav.navbar ul {
+.navbar ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
-  gap: 30px;
+  gap: 20px;
 }
-
-nav.navbar a {
+.navbar a {
+  color: #fff;
   text-decoration: none;
-  color: white;
   font-weight: bold;
-  font-size: 1rem;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #f90;
 }
 
+/* Hero */
 .hero {
   background: url('../assets/interior1.jpg') center/cover no-repeat;
-  height: 400px;
-  position: relative;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
-
 .hero .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 15px;
 }
-
-.logo {
-  max-width: 140px;
-  margin-bottom: 15px;
-}
-
-h1 {
-  font-size: 2rem;
+.hero h1 {
+  font-size: 2.8em;
   color: #fff;
 }
-
-#tagline {
-  font-size: 1.2rem;
+.hero p {
+  font-size: 1.2em;
   color: #ccc;
 }
-
+.logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
 #language-btn {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 8px 16px;
-  background: #ff9800;
+  background-color: #ffc107;
   border: none;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
   border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
+/* Botón Reservar */
+.calendar-btn,
+.btn-top-right {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  background-color: #f90;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 999;
+}
+.calendar-btn:hover,
+.btn-top-right:hover {
+  background-color: #ff6f00;
+}
+
+/* Secciones */
 section {
-  padding: 40px 20px;
-  max-width: 1000px;
+  padding: 60px 20px;
+  max-width: 1100px;
   margin: auto;
 }
+section h2 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
 
+/* Galería */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
 }
-
 .gallery-grid img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.3s;
 }
-
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
+/* Lista de precios */
 .price-list {
   list-style: none;
   padding: 0;
 }
-
 .price-list li {
-  background: #222;
-  margin-bottom: 12px;
-  padding: 12px 20px;
-  border-radius: 8px;
   display: flex;
   justify-content: space-between;
+  padding: 12px;
+  background: #222;
+  margin-bottom: 10px;
+  border-radius: 10px;
   transition: background 0.3s;
 }
-
 .price-list li:hover {
   background: #333;
 }
-
-form input, form textarea {
+.price-list a {
+  color: #fff;
+  text-decoration: none;
   width: 100%;
-  margin-bottom: 12px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
+  display: flex;
+  justify-content: space-between;
 }
 
-form button {
-  padding: 10px 20px;
-  background-color: #ff9800;
-  color: #000;
-  font-weight: bold;
+/* Formulario de contacto */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input, textarea {
+  padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
+}
+button[type="submit"] {
+  background: #f90;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
   cursor: pointer;
 }
-
-footer {
-  text-align: center;
-  background-color: #000;
-  color: #ccc;
-  padding: 30px 20px;
+button[type="submit"]:hover {
+  background: #e67e00;
 }
 
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #000;
+}
+.footer p,
+.footer a,
+.footer li {
+  color: #ccc;
+  font-size: 14px;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Botones flotantes */
 .contact-buttons {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  right: 15px;
+  bottom: 15px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  z-index: 999;
+  z-index: 1000;
 }
-
-.btn-whatsapp, .btn-facebook {
+.contact-buttons a {
   display: flex;
   align-items: center;
-  background-color: #25d366;
-  padding: 10px 14px;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 40px;
+  background: #25d366;
   color: white;
-  border-radius: 30px;
-  text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: background 0.3s;
 }
-
-.btn-facebook {
-  background-color: #1877f2;
+.contact-buttons .btn-facebook {
+  background: #1877f2;
+}
+.contact-buttons a:hover {
+  opacity: 0.9;
+}
+.contact-buttons img.icon {
+  width: 24px;
+  height: 24px;
 }
 
-.btn-whatsapp:hover, .btn-facebook:hover {
-  opacity: 0.85;
-}
-
-.btn-whatsapp .icon, .btn-facebook .icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 8px;
-  object-fit: contain;
-}
-
-.calendar-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  align-items: center;
-  background-color: #ff9800;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-
-.calendar-btn .icon {
-  margin-right: 6px;
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8em;
+  }
+  .calendar-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
 }
