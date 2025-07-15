@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Barbería moderna en Pueblo, Colorado. Cortes de cabello, barba, niños y estilo con El Pana Barbershop. Reserva por WhatsApp.">
@@ -10,7 +8,7 @@
   <meta name="author" content="El Pana Barbershop 1" />
   <title>El Pana Barbershop | Barbería en Pueblo, CO</title>
 
-  <!-- Estilos y scripts (déjalos como ya los tienes si incluyen Lightbox, ScrollReveal, etc.) -->
+  <!-- Estilos y scripts -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css">
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js" defer></script>
@@ -50,8 +48,7 @@
     <h1 id="title">El Pana Barbershop 1</h1>
     <p id="tagline">¡Tu estilo, nuestra pasión!</p>
     <button id="languageToggle" class="language-btn">English</button>
-
-  </div>..]
+  </div>
 </header>
 
 <nav class="navbar">
@@ -80,10 +77,9 @@
     <a href="assets/corte7.JPG" data-lightbox="gallery"><img src="assets/corte7.JPG" alt="Corte 7" loading="lazy" /></a>
     <a href="assets/corte8.JPG" data-lightbox="gallery"><img src="assets/corte8.JPG" alt="Corte 8" loading="lazy" /></a>
     <a href="assets/corte9.JPG" data-lightbox="gallery"><img src="assets/corte9.JPG" alt="Corte 9" loading="lazy" /></a>
-
   </div>
-
 </section>
+
 <section class="seo-info">
   <h2>El mejor Barbershop en Pueblo, CO</h2>
   <p>En <strong>El Pana Barbershop</strong> te ofrecemos una experiencia única de barbería en Pueblo, Colorado. Somos conocidos por nuestros <strong>cortes de cabello</strong> modernos, <strong>diseños personalizados</strong> y servicio excepcional. Si buscas una <strong>barbería</strong> confiable, con estilo y atención profesional, ¡somos tu mejor opción!</p>
@@ -149,46 +145,28 @@
     reset: false
   });
 </script>
-<script>
-  const languageBtn = document.getElementById('language-btn');
-  let isSpanish = true;
 
-  languageBtn.addEventListener('click', () => {
-    isSpanish = !isSpanish;
-    languageBtn.textContent = isSpanish ? 'English' : 'Español';
-
-    // Títulos y textos en ambas versiones
-    document.getElementById('title').textContent = isSpanish ? 'El Pana Barbershop 1' : 'El Pana Barbershop 1';
-    document.getElementById('tagline').textContent = isSpanish ? '¡Tu estilo, nuestra pasión!' : 'Your style, our passion!';
-    document.getElementById('about-title').textContent = isSpanish ? '¿Quiénes somos?' : 'About Us';
-    document.getElementById('about-text').textContent = isSpanish
-      ? 'Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!'
-      : 'We are a professional barbershop in Pueblo, CO. We offer modern, classic, and clean shaves. Book your appointment and enjoy the experience!';
-    document.getElementById('gallery-title').textContent = isSpanish ? 'Galería de cortes' : 'Haircut Gallery';
-    document.getElementById('services-title').textContent = isSpanish ? 'Servicios y precios' : 'Services and Prices';
-    document.getElementById('contact-title').textContent = isSpanish ? 'Contáctanos' : 'Contact Us';
-    document.getElementById('book-btn').textContent = isSpanish ? 'Reservar cita' : 'Book Now';
-  });
-</script>
 <script>
   const translations = {
     es: {
       title: "El Pana Barbershop 1",
-      slogan: "Tu estilo, nuestra pasión",
-      "nav.gallery": "Galería",
-      "nav.services": "Servicios",
-      "nav.hours": "Horarios",
-      "nav.location": "Ubicación",
-      "nav.contact": "Contacto",
+      tagline: "¡Tu estilo, nuestra pasión!",
+      "about-title": "¿Quiénes somos?",
+      "about-text": "Somos una barbería profesional en Pueblo, CO. Ofrecemos cortes modernos, clásicos y afeitados impecables. ¡Reserva tu cita y vive la experiencia!",
+      "gallery-title": "Galería de cortes",
+      "services-title": "Servicios y precios",
+      "contact-title": "Contáctanos",
+      "book-btn": "Reservar cita"
     },
     en: {
       title: "El Pana Barbershop 1",
-      slogan: "Your style, our passion",
-      "nav.gallery": "Gallery",
-      "nav.services": "Services",
-      "nav.hours": "Hours",
-      "nav.location": "Location",
-      "nav.contact": "Contact",
+      tagline: "Your style, our passion!",
+      "about-title": "About Us",
+      "about-text": "We are a professional barbershop in Pueblo, CO. We offer modern, classic, and clean shaves. Book your appointment and enjoy the experience!",
+      "gallery-title": "Haircut Gallery",
+      "services-title": "Services and Prices",
+      "contact-title": "Contact Us",
+      "book-btn": "Book Now"
     }
   };
 
@@ -198,17 +176,13 @@
   toggleBtn.addEventListener("click", () => {
     currentLang = currentLang === "es" ? "en" : "es";
     toggleBtn.textContent = currentLang === "es" ? "English" : "Español";
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[currentLang][key]) {
-        el.textContent = translations[currentLang][key];
-      }
+
+    Object.entries(translations[currentLang]).forEach(([id, text]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
     });
   });
 </script>
-</body>
-  <div class="language-selector">
-  <button onclick="toggleLanguage()">🌐 English</button>
-</div>
 
+</body>
 </html>
