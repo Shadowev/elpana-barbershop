@@ -12,7 +12,7 @@ body {
   font-size: 16px;
 }
 
-/* HERO SECTION */
+/* Hero */
 header.hero {
   position: relative;
   background: url('../assets/interior1.jpg') no-repeat center center/cover;
@@ -27,7 +27,6 @@ header.hero {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 40px;
   border-radius: 12px;
-  max-width: 90%;
 }
 
 .logo {
@@ -36,7 +35,7 @@ header.hero {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2em;
   color: #fff;
   margin-bottom: 0.5em;
 }
@@ -47,20 +46,18 @@ p {
 }
 
 .language-btn {
-  background-color: #ffc107;
-  color: #000;
+  background: #ffc107;
   border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 8px;
+  padding: 8px 16px;
   font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-/* NAVBAR */
 .navbar {
   background-color: #222;
-  padding: 15px;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -68,158 +65,146 @@ p {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .navbar a {
-  color: #ffc107;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #fff;
+  color: #ffc107;
 }
 
-/* SECTIONS */
+/* Sections */
 section {
-  padding: 40px 20px;
+  padding: 50px 20px;
   max-width: 1000px;
   margin: auto;
+  text-align: center;
 }
 
-section h2 {
-  color: #ffc107;
-  font-size: 1.8em;
-  margin-bottom: 20px;
-}
-
-/* GALLERY */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 15px;
+  margin-top: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
-/* PRICE LIST */
 .price-list {
   list-style: none;
   padding: 0;
 }
 
 .price-list li {
-  background-color: #222;
-  border-radius: 8px;
-  padding: 15px 20px;
-  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
+  background: #222;
+  margin: 10px 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .price-list li:hover {
   background-color: #333;
 }
 
-.price-list a {
-  color: #ffc107;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
+.map-container iframe {
   width: 100%;
-}
-
-/* CONTACT */
-.map-container {
-  margin-top: 20px;
   border-radius: 12px;
-  overflow: hidden;
 }
 
-/* FOOTER */
-.footer {
-  background-color: #000;
-  padding: 20px;
+footer.footer {
+  background: #000;
   text-align: center;
-  color: #888;
+  padding: 20px;
+  color: #aaa;
+  font-size: 14px;
 }
 
-/* FLOATING BUTTONS */
-.calendar-btn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background-color: #28a745;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 50px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-.contact-buttons {
+/* ✅ BOTONES FLOTANTES NUEVOS */
+.floating-buttons {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
-.btn-facebook,
-.btn-whatsapp {
+.floating-btn {
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: #333;
+  color: white;
   padding: 10px 16px;
   border-radius: 50px;
   font-weight: bold;
-  color: #fff;
-  text-decoration: none;
   font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
 }
 
-.btn-facebook {
-  background-color: #3b5998;
+.floating-btn:hover {
+  filter: brightness(1.1);
 }
 
-.btn-whatsapp {
-  background-color: #25D366;
+.floating-btn.reservar {
+  background-color: #ff9800;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
+.floating-btn.facebook {
+  background-color: #1877f2;
 }
 
-/* SCROLL ANIMATIONS */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.floating-btn.whatsapp {
+  background-color: #25d366;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .price-list li {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header.hero {
+    height: 70vh;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .floating-buttons {
+    right: 15px;
+    bottom: 15px;
+  }
 }
