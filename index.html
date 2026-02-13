@@ -8,11 +8,17 @@
   <meta name="author" content="El Pana Barbershop 1" />
   <title>Barbería en Pueblo, CO | El Pana Barbershop 1 – Corte de pelo y barba</title>
 
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google.com">
+
   <!-- Estilos y scripts -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css">
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js" defer></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal" defer></script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV7VMFZ65S"></script>
@@ -27,7 +33,7 @@
 
 <header class="hero">
   <div class="overlay">
-    <img src="assets/logo.png" alt="Logo El Pana" class="logo" />
+    <img src="assets/logo.png" alt="Logo El Pana" class="logo" fetchpriority="high" decoding="async" />
     <h1 id="title">El Pana Barbershop 1 – Barbería en Pueblo, CO</h1>
     <p id="tagline">¡Tu estilo, nuestra pasión!</p>
     <button id="languageToggle" class="language-btn">English</button>
@@ -51,15 +57,15 @@
 <section class="gallery reveal" id="galeria">
   <h2>Galería de cortes y diseños de barba</h2>
   <div class="gallery-grid">
-    <a href="assets/corte1.JPG" data-lightbox="gallery"><img src="assets/corte1.JPG" alt="Corte 1" loading="lazy" /></a>
-    <a href="assets/corte2.JPG" data-lightbox="gallery"><img src="assets/corte2.JPG" alt="Corte 2" loading="lazy" /></a>
-    <a href="assets/corte3.JPG" data-lightbox="gallery"><img src="assets/corte3.JPG" alt="Corte 3" loading="lazy" /></a>
-    <a href="assets/corte4.JPG" data-lightbox="gallery"><img src="assets/corte4.JPG" alt="Corte 4" loading="lazy" /></a>
-    <a href="assets/corte5.JPG" data-lightbox="gallery"><img src="assets/corte5.JPG" alt="Corte 5" loading="lazy" /></a>
-    <a href="assets/corte6.JPG" data-lightbox="gallery"><img src="assets/corte6.JPG" alt="Corte 6" loading="lazy" /></a>
-    <a href="assets/corte7.JPG" data-lightbox="gallery"><img src="assets/corte7.JPG" alt="Corte 7" loading="lazy" /></a>
-    <a href="assets/corte8.JPG" data-lightbox="gallery"><img src="assets/corte8.JPG" alt="Corte 8" loading="lazy" /></a>
-    <a href="assets/corte9.JPG" data-lightbox="gallery"><img src="assets/corte9.JPG" alt="Corte 9" loading="lazy" /></a>
+    <a href="assets/corte1.JPG" data-lightbox="gallery"><img src="assets/corte1.JPG" alt="Corte 1" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte2.jpg" data-lightbox="gallery"><img src="assets/corte2.jpg" alt="Corte 2" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte3.JPG" data-lightbox="gallery"><img src="assets/corte3.JPG" alt="Corte 3" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte4.JPG" data-lightbox="gallery"><img src="assets/corte4.JPG" alt="Corte 4" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte5.jpg" data-lightbox="gallery"><img src="assets/corte5.jpg" alt="Corte 5" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte6.JPG" data-lightbox="gallery"><img src="assets/corte6.JPG" alt="Corte 6" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte7.JPG" data-lightbox="gallery"><img src="assets/corte7.JPG" alt="Corte 7" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte8.JPG" data-lightbox="gallery"><img src="assets/corte8.JPG" alt="Corte 8" loading="lazy" decoding="async" /></a>
+    <a href="assets/corte9.jpg" data-lightbox="gallery"><img src="assets/corte9.jpg" alt="Corte 9" loading="lazy" decoding="async" /></a>
   </div>
 </section>
 
@@ -102,16 +108,18 @@
 </div>
 
 <script>
-  ScrollReveal().reveal('.reveal', {
-    distance: '50px',
-    duration: 1000,
-    easing: 'ease-out',
-    origin: 'bottom',
-    reset: false
-  });
-</script>
+  // Initialize ScrollReveal when DOM is ready
+  if (typeof ScrollReveal !== 'undefined') {
+    ScrollReveal().reveal('.reveal', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-out',
+      origin: 'bottom',
+      reset: false
+    });
+  }
 
-<script>
+  // Language toggle functionality
   const translations = {
     es: {
       title: "El Pana Barbershop 1 – Barbería en Pueblo, CO",
@@ -142,10 +150,11 @@
     currentLang = currentLang === "es" ? "en" : "es";
     toggleBtn.textContent = currentLang === "es" ? "English" : "Español";
 
-    Object.entries(translations[currentLang]).forEach(([id, text]) => {
+    const langTranslations = translations[currentLang];
+    for (const id in langTranslations) {
       const el = document.getElementById(id);
-      if (el) el.textContent = text;
-    });
+      if (el) el.textContent = langTranslations[id];
+    }
   });
 </script>
 
