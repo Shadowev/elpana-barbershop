@@ -65,12 +65,8 @@
 
 <section class="services reveal" id="servicios">
   <h2>Servicios y precios</h2>
-  <ul class="price-list">
-    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20Clásico"><span>Corte Clásico</span><span>$27</span></a></li>
-    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20+%20Barba%20+%20Cejas"><span>Corte + Barba + Cejas</span><span>$35</span></a></li>
-    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Diseño%20de%20barba"><span>Diseño de barba</span><span>$20</span></a></li>
-    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Corte%20para%20niños"><span>Corte para niños</span><span>$25</span></a></li>
-    <li><a href="https://wa.me/17195042764?text=Hola,%20quiero%20reservar%20una%20cita%20para%20Color%20o%20tinte"><span>Color o tinte</span><span>$40</span></a></li>
+  <ul class="price-list" id="servicesList">
+    <!-- Services will be dynamically generated -->
   </ul>
 </section>
 
@@ -79,7 +75,7 @@
   <p>Contáctanos, visítanos o reserva desde WhatsApp. Estamos ubicados en el corazón de Pueblo, CO, con el mejor ambiente y talento.</p>
   <p><strong>Dirección:</strong> 1008 Constitution Rd, Pueblo, CO 81001</p>
   <p><strong>Teléfono:</strong> <a href="tel:+17195042764">+1 719-504-2764</a></p>
-  <p><strong>WhatsApp:</strong> <a href="https://wa.me/17195042764" target="_blank">Chatea ahora</a></p>
+  <p><strong>WhatsApp:</strong> <a href="#" id="whatsappContactLink" target="_blank">Chatea ahora</a></p>
   <p><strong>Horario:</strong><br>
      Lunes a Jueves: 1:00pm - 9:00pm<br>
      Viernes y Sábado: 9:00am - 9:00pm<br>
@@ -98,8 +94,52 @@
 <div class="floating-buttons">
   <a href="https://calendly.com/eveliovaldes88/corte-en-el-pana-barbershop-1" class="floating-btn reservar" target="_blank" aria-label="Reservar cita">📅 Reservar</a>
   <a href="https://www.facebook.com/profile.php?id=61567723604191" class="floating-btn facebook" target="_blank" aria-label="Facebook">📘 Facebook</a>
-  <a href="https://wa.me/17195042764" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">💬 WhatsApp</a>
+  <a href="#" id="whatsappFloatingBtn" class="floating-btn whatsapp" target="_blank" aria-label="WhatsApp">💬 WhatsApp</a>
 </div>
+
+<script>
+  // Configuration constants
+  const WHATSAPP_NUMBER = '17195042764';
+  const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+  
+  const SERVICES = [
+    { name: 'Corte Clásico', price: '$27' },
+    { name: 'Corte + Barba + Cejas', price: '$35' },
+    { name: 'Diseño de barba', price: '$20' },
+    { name: 'Corte para niños', price: '$25' },
+    { name: 'Color o tinte', price: '$40' }
+  ];
+
+  // Generate services list dynamically
+  function generateServicesList() {
+    const servicesList = document.getElementById('servicesList');
+    if (!servicesList) return;
+
+    const servicesHTML = SERVICES.map(service => {
+      const whatsappText = encodeURIComponent(`Hola, quiero reservar una cita para ${service.name}`);
+      const whatsappURL = `${WHATSAPP_BASE_URL}?text=${whatsappText}`;
+      
+      return `<li><a href="${whatsappURL}"><span>${service.name}</span><span>${service.price}</span></a></li>`;
+    }).join('');
+
+    servicesList.innerHTML = servicesHTML;
+  }
+
+  // Set WhatsApp links
+  function setWhatsAppLinks() {
+    const contactLink = document.getElementById('whatsappContactLink');
+    const floatingBtn = document.getElementById('whatsappFloatingBtn');
+    
+    if (contactLink) contactLink.href = WHATSAPP_BASE_URL;
+    if (floatingBtn) floatingBtn.href = WHATSAPP_BASE_URL;
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    generateServicesList();
+    setWhatsAppLinks();
+  });
+</script>
 
 <script>
   ScrollReveal().reveal('.reveal', {
