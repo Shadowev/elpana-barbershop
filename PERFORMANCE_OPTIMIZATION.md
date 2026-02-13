@@ -14,11 +14,10 @@
 ### 2. CSS Performance Improvements
 - ✅ Added `will-change: transform` to gallery images to optimize hover animations
 - ✅ Added `content-visibility: auto` to hero section for better rendering performance
-- ✅ Added `font-display: swap` for better font loading performance
 
 ### 3. JavaScript Optimizations
 - ✅ Consolidated inline scripts into a single block
-- ✅ Replaced `Object.entries().forEach()` with simple `for...in` loop for better performance
+- ✅ Used `Object.keys().forEach()` for safe property iteration
 - ✅ Added safety check for ScrollReveal initialization
 
 ## Recommended Future Optimizations

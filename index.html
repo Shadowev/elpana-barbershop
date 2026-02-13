@@ -9,9 +9,9 @@
   <title>Barbería en Pueblo, CO | El Pana Barbershop 1 – Corte de pelo y barba</title>
 
   <!-- Preconnect to external resources -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
   <link rel="dns-prefetch" href="https://www.google.com">
 
   <!-- Estilos y scripts -->
@@ -151,10 +151,10 @@
     toggleBtn.textContent = currentLang === "es" ? "English" : "Español";
 
     const langTranslations = translations[currentLang];
-    for (const id in langTranslations) {
+    Object.keys(langTranslations).forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = langTranslations[id];
-    }
+    });
   });
 </script>
 
