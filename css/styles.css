@@ -18,6 +18,9 @@
   --radius-lg: 12px;
   --radius-full: 50px;
   --transition-ease: 0.3s ease;
+  --color-reservar: #ff9800;
+  --color-facebook: #1877f2;
+  --color-whatsapp: #25d366;
 }
 
 body {
@@ -184,15 +187,15 @@ footer.footer {
 }
 
 .floating-btn.reservar {
-  background-color: #ff9800;
+  background-color: var(--color-reservar);
 }
 
 .floating-btn.facebook {
-  background-color: #1877f2;
+  background-color: var(--color-facebook);
 }
 
 .floating-btn.whatsapp {
-  background-color: #25d366;
+  background-color: var(--color-whatsapp);
 }
 
 /* Responsive */
